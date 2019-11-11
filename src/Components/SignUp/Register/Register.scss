@@ -1,0 +1,69 @@
+.register {
+  box-sizing: border-box;
+  margin-top: 0em;
+
+  .checkbox-wrapper {
+    box-sizing: border-box;
+    display: block;
+
+    .cb-label {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .normal-path {
+        fill: rgb(62, 64, 66);
+      }
+
+      .select-path {
+        fill: rgb(62, 64, 66);
+        d: path(
+          "M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-8.666 13.684l7.5-7.5L16.659 8l-6.325 6.326-2.992-2.984-1.175 1.175 4.167 4.167z"
+        );
+      }
+
+      .cb-message {
+        font-size: 14px;
+        font-weight: normal;
+        color: rgb(62, 64, 66);
+        line-height: 20px;
+        letter-spacing: -0.2px;
+        margin: 0px 0px 0px 8px;
+
+        a {
+          box-sizing: border-box;
+          font-weight: bold;
+          color: rgb(69, 159, 191);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .signup-btn {
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-width: 0px;
+    margin-top: 14px;
+    padding: 0px 20px;
+    width: 100%;
+    height: 48px;
+    vertical-align: middle;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 146, 43);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    border-radius: 3px;
+    outline: none;
+
+    &:hover {
+      background-color: rgb(247, 120, 0);
+    }
+  }
+}

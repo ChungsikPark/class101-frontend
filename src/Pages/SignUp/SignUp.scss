@@ -1,0 +1,43 @@
+.sign-up-wrapper {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 64px 0px 0px 0px;
+
+  .sign-up {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 0px 128px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+
+    .contents {
+      box-sizing: border-box;
+      position: relative;
+      width: 50%;
+      margin-left: 25%;
+      min-height: 1px;
+      padding: 0 12px;
+
+      h1 {
+        font-size: 32px;
+        line-height: 44px;
+        letter-spacing: -0.6px;
+        margin: 16px 0px 48px;
+        color: rgb(24, 32, 38);
+        font-weight: 600;
+      }
+
+      hr {
+        box-sizing: content-box;
+        margin: 20px 0px;
+        border-style: none none solid;
+        border-bottom: 1px solid rgba(16, 22, 26, 0.15);
+        overflow: visible;
+      }
+    }
+  }
+}
