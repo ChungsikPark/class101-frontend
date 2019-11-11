@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+.myclass-container {
+  background-color: rgb(240, 240, 240);
+  height: 200vh;
+  position: absolute;
+  width: 100vw;
+  .myclass-body {
+    left: 270px;
+    bottom: 30%;
+    position: relative;
+    top: 75px;
+    width: 70%;
+    margin-left: 8%;
+
+    .myclass-header {
+      font-size: 22px;
+      font-weight: 760;
+      color: rgb(49, 49, 49);
+      opacity: 0.9;
+      margin-top: 23px;
+    }
+    .myclass-classes-section {
+      margin-top: 20px;
+      //   border: 1px solid black;
+      display: flex;
+
+      .myclass-makeclass {
+        height: 280px;
+        width: 30%;
+        max-width: 340px;
+        background-color: white;
+        box-shadow: rgba(41, 42, 43, 0.16) 0px 1px 3px -1px,
+          rgba(0, 0, 0, 0.04) 0px 0px 1px 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .myclass-makeclass-content {
+          text-align: center;
+          color: rgb(253, 126, 20);
+          margin-bottom: 20px;
+          .myclass-makeclass-plus {
+            font-size: 70px;
+            margin-bottom: 10px;
+          }
+          .myclass-makeclass-state {
+            font-size: 16px;
+            font-weight: 750;
+          }
+        }
+      }
+    }
+    .myclass-help {
+      margin-top: 12px;
+      .myclass-help-header {
+        font-size: 22px;
+        font-weight: 760;
+        color: rgb(49, 49, 49);
+        opacity: 0.9;
+        margin-top: 23px;
+      }
+      .myclass-helps-section {
+        margin-top: 10px;
+        display: flex;
+        .myclass-help {
+          height: 155px;
+          width: 30%;
+          max-width: 340px;
+          margin-right: 1.7%;
+          background-color: white;
+          border: 1px solid rgb(195, 195, 195);
+          flex-direction: column;
+          display: flex;
+          align-items: center;
+          .myclass-help-title {
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+            margin-top: 20px;
+            margin-bottom: 23px;
+            font-weight: 700;
+          }
+          .myclass-help-content {
+            width: 85%;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

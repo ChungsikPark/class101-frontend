@@ -1,0 +1,102 @@
+.intro-body2 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.intro-content {
+  width: 54%;
+  height: 100%;
+  background-color: white;
+
+  .intro-logo {
+    display: flex;
+    margin-left: 33px;
+    margin-top: 20px;
+    .main-logo {
+      font-weight: 700;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 10px;
+      border-radius: 1%;
+      text-decoration: none;
+    }
+    .main-101 {
+      font-weight: 730;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 13px;
+      border-radius: 1%;
+      text-decoration: none;
+      margin-left: 3px;
+    }
+    .creator {
+      color: white;
+      font-weight: 700;
+      font-size: 25px;
+      margin-left: 2%;
+      margin-bottom: 0.7%;
+    }
+  }
+  .intro-contents {
+    width: 67%;
+
+    margin: auto;
+    margin-top: 23%;
+    .intro-contents-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: rgb(62, 64, 66);
+      line-height: 56px;
+      letter-spacing: -1px;
+      margin-bottom: 35px;
+    }
+    .intro-contents-state {
+      font-size: 19px;
+      font-weight: normal;
+      color: rgb(62, 64, 66);
+      line-height: 24px;
+      letter-spacing: -0.2px;
+    }
+    .intro-button {
+      width: 62px;
+      display: inline-flex;
+      text-align: center;
+      vertical-align: middle;
+      color: rgb(255, 255, 255);
+      background-color: rgb(255, 146, 43);
+      font-weight: 550;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      height: 45px;
+      text-decoration-line: none;
+      border-radius: 3px;
+      padding: 0px 16px;
+      margin-top: 30px;
+    }
+  }
+}
+.intro-img2 {
+  background-image: url("../../Img/intro2.png");
+  width: 46%;
+  height: 100%;
+  //   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: handleImg 2s;
+}
+@keyframes handleImg {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
