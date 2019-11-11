@@ -7,10 +7,12 @@ export class SignIn extends Component {
   render() {
     return (
       <div className="sign-in-wrapper">
-        <h1>로그인</h1>
-        <NormalLogin />
-        <hr></hr>
-        <SocialLogin />
+        <div className="sign-in">
+          <h1>로그인</h1>
+          <NormalLogin />
+          <hr></hr>
+          <SocialLogin />
+        </div>
       </div>
     );
   }
