@@ -3,23 +3,14 @@ import "./InputArea.scss";
 
 export class InputArea extends Component {
   state = {
-    blankFirstInput: true,
-    blankFirstH6: true,
-    blankSecondInput: true,
-    blankSecondH6: true
+    blankInput: true,
+    blankH6: true
   };
 
-  handleFirstInput = e => {
+  handleInput = e => {
     this.setState({
-      blankFirstInput: e.target.value.length > 0 ? true : false,
-      blankFirstH6: e.target.value.length > 0 ? true : false
-    });
-  };
-
-  handleSecondInput = e => {
-    this.setState({
-      blankSecondInput: e.target.value.length > 0 ? true : false,
-      blankSecondH6: e.target.value.length > 0 ? true : false
+      blankInput: e.target.value.length > 0 ? true : false,
+      blankH6: e.target.value.length > 0 ? true : false
     });
   };
 
@@ -33,15 +24,15 @@ export class InputArea extends Component {
         <label className="input-label">{this.props.labelText}</label>
         <div className="input-content">
           <input
-            onChange={this.handleFirstInput}
-            onBlur={this.handleFirstInput}
-            className={this.state.blankFirstInput ? rightInput : errorInput}
+            onChange={this.handleInput}
+            onBlur={this.handleInput}
+            className={this.state.blankInput ? rightInput : errorInput}
             type={this.props.inputType}
             name={this.props.inputName}
             placeholder={this.props.placeholder}
             autoComplete="off"
           ></input>
-          <h6 className={this.state.blankFirstH6 ? rightH6 : errorH6}>
+          <h6 className={this.state.blankH6 ? rightH6 : errorH6}>
             <svg width="16" height="16" viewBox="0 0 24 24">
               <path
                 fill="#3E4042"
