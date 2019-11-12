@@ -1,0 +1,111 @@
+.input-area {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 16px;
+
+  .input-label {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0px 0px 4px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    color: rgb(62, 64, 66);
+  }
+
+  .input-content {
+    box-sizing: border-box;
+    display: block;
+
+    .input-box {
+      box-sizing: border-box;
+      padding: 0px 16px;
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      background-color: white;
+      color: rgb(62, 64, 66);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(221, 224, 226);
+      border-radius: 3px;
+
+      &:hover {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(189, 194, 198);
+        border-image: initial;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: rgb(62, 64, 66);
+      }
+    }
+
+    .input-box-error {
+      box-sizing: border-box;
+      padding: 0px 16px;
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      background-color: white;
+      color: rgb(62, 64, 66);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(255, 82, 82);
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .h6 {
+      display: none;
+      align-items: center;
+      color: rgb(255, 82, 82);
+      margin: 2px 0px;
+      font-weight: 600;
+
+      svg {
+        path {
+          fill: rgb(255, 82, 82);
+        }
+      }
+
+      .alert-message {
+        margin-left: 2px;
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: normal;
+      }
+    }
+
+    .h6-error {
+      display: flex;
+      align-items: center;
+      color: rgb(255, 82, 82);
+      margin: 2px 0px;
+      font-weight: 600;
+
+      svg {
+        path {
+          fill: rgb(255, 82, 82);
+        }
+      }
+
+      .alert-message {
+        margin-left: 2px;
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: normal;
+      }
+    }
+  }
+}
