@@ -12,6 +12,9 @@ export class RegisterArea extends Component {
     });
   };
 
+  handleRgPassword = () => {
+    this.setState({ if() {} });
+  };
   render() {
     let rightInput = "rg-input";
     let errorInput = "rg-input-error";

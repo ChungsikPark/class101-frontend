@@ -10,33 +10,7 @@ export class Register extends Component {
 
   handlePath = s => {
     this.setState({ [s]: !this.state[s] });
-    // console.log({ [s]: !this.state[s] });
-    // this.setState({ [isSelectionPath]: !this.state.isSelectionPath });
   };
-
-  // handleEssentialPath = () => {
-  //   this.setState({ isEssentialPath: !this.state.isEssentialPath });
-  // };
-
-  // handleSelectionPath = () => {
-  //   this.setState({ isSelectionPath: !this.state.isSelectionPath });
-  // };
-
-  // handleEssentialPath = e => {
-  //   if (this.state.isEssentialPath === true) {
-  //     this.setState({ isEssentialPath: false });
-  //   } else {
-  //     this.setState({ isEssentialPath: true });
-  //   }
-  // };
-
-  // handleSelectionPath = () => {
-  //   if (this.state.isSelectionPath === true) {
-  //     this.setState({ isSelectionPath: false });
-  //   } else {
-  //     this.setState({ isSelectionPath: true });
-  //   }
-  // };
 
   render() {
     let normalPath = "normal-path";
