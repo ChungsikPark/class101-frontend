@@ -1,0 +1,113 @@
+.register-blank {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 16px;
+
+  .rg-label {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    color: rgb(62, 64, 66);
+    margin: 0px 0px 4px;
+  }
+
+  .rg-input-wrapper {
+    box-sizing: border-box;
+    display: block;
+
+    .rg-input {
+      box-sizing: border-box;
+      flex: 1 1 auto;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      background-color: white;
+      height: 48px;
+      width: 100%;
+      color: rgb(62, 64, 66);
+      margin: 0px;
+      padding: 0px 16px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(221, 224, 226);
+      border-radius: 3px;
+
+      &:hover {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(189, 194, 198);
+        border-image: initial;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: rgb(62, 64, 66);
+      }
+    }
+
+    .rg-input-error {
+      box-sizing: border-box;
+      flex: 1 1 auto;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      background-color: white;
+      height: 48px;
+      width: 100%;
+      color: rgb(62, 64, 66);
+      margin: 0px;
+      padding: 0px 16px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(255, 82, 82);
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .rg-alert {
+      display: none;
+      align-items: center;
+      color: rgb(255, 82, 82);
+      margin: 2px 0px;
+
+      path {
+        fill: rgb(255, 82, 82);
+      }
+
+      .rg-alert-message {
+        box-sizing: border-box;
+        margin-left: 2px;
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: normal;
+        display: flex;
+      }
+    }
+
+    .rg-alert-error {
+      display: flex;
+      align-items: center;
+      color: rgb(255, 82, 82);
+      margin: 2px 0px;
+
+      path {
+        fill: rgb(255, 82, 82);
+      }
+
+      .rg-alert-message {
+        box-sizing: border-box;
+        margin-left: 2px;
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: normal;
+        display: flex;
+      }
+    }
+  }
+}
