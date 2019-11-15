@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost:3000/makeclass/makeclass1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/makeclass/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <script src="./React App_files/kakao.min.js"></script>
+  <style>body {
+  margin: 0;
+  text-align: left;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  background: white;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  color: #182026;
+}
+</style><style>* {
+  box-sizing: border-box; }
+
+.myclass-container {
+  background-color: #f0f0f0;
+  height: 200vh;
+  position: absolute;
+  width: 100vw; }
+  .myclass-container .myclass-body {
+    left: 270px;
+    bottom: 30%;
+    position: relative;
+    top: 75px;
+    width: 70%;
+    margin-left: 8%; }
+    .myclass-container .myclass-body .myclass-header {
+      font-size: 22px;
+      font-weight: 760;
+      color: #313131;
+      opacity: 0.9;
+      margin-top: 23px; }
+    .myclass-container .myclass-body .myclass-classes-section {
+      margin-top: 20px;
+      display: flex; }
+      .myclass-container .myclass-body .myclass-classes-section .myclass-makeclass {
+        height: 280px;
+        width: 30%;
+        max-width: 340px;
+        background-color: white;
+        box-shadow: rgba(41, 42, 43, 0.16) 0px 1px 3px -1px, rgba(0, 0, 0, 0.04) 0px 0px 1px 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .myclass-container .myclass-body .myclass-classes-section .myclass-makeclass .myclass-makeclass-content {
+          text-align: center;
+          color: #fd7e14;
+          margin-bottom: 20px; }
+          .myclass-container .myclass-body .myclass-classes-section .myclass-makeclass .myclass-makeclass-content .myclass-makeclass-plus {
+            font-size: 70px;
+            margin-bottom: 10px; }
+          .myclass-container .myclass-body .myclass-classes-section .myclass-makeclass .myclass-makeclass-content .myclass-makeclass-state {
+            font-size: 16px;
+            font-weight: 750; }
+    .myclass-container .myclass-body .myclass-help {
+      margin-top: 12px; }
+      .myclass-container .myclass-body .myclass-help .myclass-help-header {
+        font-size: 22px;
+        font-weight: 760;
+        color: #313131;
+        opacity: 0.9;
+        margin-top: 23px; }
+      .myclass-container .myclass-body .myclass-help .myclass-helps-section {
+        margin-top: 10px;
+        display: flex; }
+        .myclass-container .myclass-body .myclass-help .myclass-helps-section .myclass-help {
+          height: 155px;
+          width: 30%;
+          max-width: 340px;
+          margin-right: 1.7%;
+          background-color: white;
+          border: 1px solid #c3c3c3;
+          flex-direction: column;
+          display: flex;
+          align-items: center; }
+          .myclass-container .myclass-body .myclass-help .myclass-helps-section .myclass-help .myclass-help-title {
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+            margin-top: 20px;
+            margin-bottom: 23px;
+            font-weight: 700; }
+          .myclass-container .myclass-body .myclass-help .myclass-helps-section .myclass-help .myclass-help-content {
+            width: 85%;
+            font-size: 15px; }
+</style><style>.main-nav {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #202125;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px; }
+  .main-nav .main-nav-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 8vh;
+    width: 40%;
+    min-width: 500px; }
+    .main-nav .main-nav-left .main-logo {
+      margin-left: 2%;
+      font-weight: 800;
+      font-size: 20px;
+      color: black;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      height: 3vh;
+      padding: 0.3% 1.2% 0.4% 1.2%;
+      border-radius: 1%;
+      text-decoration: none; }
+    .main-nav .main-nav-left .main-101 {
+      font-weight: 800;
+      font-size: 20px;
+      color: black;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      height: 3vh;
+      padding: 0.3% 1.1% 0.4% 1.2%;
+      border-radius: 1%;
+      text-decoration: none;
+      margin-left: 1%; }
+    .main-nav .main-nav-left .creator {
+      color: white;
+      font-weight: 700;
+      font-size: 25px;
+      margin-left: 2%;
+      margin-bottom: 0.7%; }
+  .main-nav .main-nav-login-box {
+    display: flex;
+    font-weight: 600;
+    font-size: 19px;
+    width: 20%;
+    text-decoration: none; }
+    .main-nav .main-nav-login-box a {
+      text-decoration: none;
+      color: white; }
+    .main-nav .main-nav-login-box a :visited {
+      text-decoration: none; }
+    .main-nav .main-nav-login-box a:hover {
+      text-decoration: none; }
+    .main-nav .main-nav-login-box .main-nav-login {
+      margin-right: 8%; }
+</style><style>* {
+  box-sizing: border-box; }
+
+.myclass-nav {
+  background-color: white;
+  width: 270px;
+  height: 100%;
+  position: fixed;
+  box-shadow: rgba(37, 38, 39, 0.16) 3px 0px 6px -2px; }
+  .myclass-nav .nav-contents {
+    margin-top: 100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    font-weight: 520; }
+    .myclass-nav .nav-contents a {
+      text-decoration: none;
+      color: black; }
+    .myclass-nav .nav-contents .nav-line {
+      border-bottom: 1px solid #e2e0e0;
+      margin-top: 12px;
+      margin-bottom: 14px; }
+    .myclass-nav .nav-contents .nav-statics {
+      display: flex;
+      opacity: 0.7;
+      margin-bottom: 12px; }
+      .myclass-nav .nav-contents .nav-statics .nav-check {
+        width: 16px;
+        height: 18px;
+        margin-left: 13px;
+        margin-right: 5px;
+        margin-top: 1px; }
+      .myclass-nav .nav-contents .nav-statics .nav-statics-content {
+        margin-left: 6px; }
+    .myclass-nav .nav-contents .nav-alarm {
+      display: flex;
+      opacity: 0.7;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+      .myclass-nav .nav-contents .nav-alarm .nav-bell {
+        width: 20px;
+        height: 20px;
+        margin-left: 9px;
+        margin-right: 5px;
+        margin-top: 1px;
+        opacity: 1; }
+      .myclass-nav .nav-contents .nav-alarm .nav-alarm-content {
+        margin-left: 6px; }
+    .myclass-nav .nav-contents .nav-myclass {
+      display: flex;
+      opacity: 0.7;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+      .myclass-nav .nav-contents .nav-myclass .nav-flag {
+        width: 21px;
+        height: 20px;
+        margin-left: 9px;
+        margin-right: 4px;
+        margin-top: 1px;
+        opacity: 1; }
+      .myclass-nav .nav-contents .nav-myclass .nav-myclass-content {
+        margin-left: 6px; }
+    .myclass-nav .nav-contents .nav-commentmanage {
+      display: flex;
+      opacity: 0.7;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+      .myclass-nav .nav-contents .nav-commentmanage .nav-comment {
+        width: 21px;
+        height: 20px;
+        margin-left: 9px;
+        margin-right: 4px;
+        margin-top: 1px;
+        opacity: 1; }
+      .myclass-nav .nav-contents .nav-commentmanage .nav-comment-content {
+        margin-left: 6px; }
+    .myclass-nav .nav-contents .nav-logout {
+      display: flex;
+      opacity: 0.7;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+      .myclass-nav .nav-contents .nav-logout .nav-logout {
+        width: 21px;
+        height: 20px;
+        margin-left: 9px;
+        margin-right: 4px;
+        margin-top: 1px;
+        opacity: 1; }
+      .myclass-nav .nav-contents .nav-logout .nav-logout-content {
+        margin-left: 6px; }
+</style><style>.myclass-class {
+  height: 280px;
+  width: 30%;
+  max-width: 340px;
+  margin-right: 1.7%;
+  background-color: white;
+  box-shadow: rgba(41, 42, 43, 0.16) 0px 1px 3px -1px, rgba(0, 0, 0, 0.04) 0px 0px 1px 1px; }
+  .myclass-class .myclass-img {
+    height: 70%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .myclass-class .myclass-contents {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 16px; }
+    .myclass-class .myclass-contents .myclass-title {
+      font-weight: 500;
+      font-size: 15px; }
+    .myclass-class .myclass-contents .myclass-utill {
+      width: 16px; }
+  .myclass-class .myclass-status {
+    margin-left: 16px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 10px;
+    background-color: black;
+    width: 75px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white; }
+</style><style>.sign-in-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  min-height: 100vh; }
+  .sign-in-wrapper .sign-in {
+    box-sizing: border-box;
+    max-width: 640px;
+    width: 100%;
+    padding: 24px;
+    background-color: white; }
+    .sign-in-wrapper .sign-in h1 {
+      margin: 16px 0px 48px;
+      padding: 0;
+      font-size: 32px;
+      line-height: 44px;
+      letter-spacing: -0.6px;
+      font-weight: 600;
+      color: #182026; }
+    .sign-in-wrapper .sign-in hr {
+      margin: 20px 0;
+      border: none;
+      border-bottom: 1px solid rgba(16, 22, 26, 0.15); }
+</style><style>.normal-login {
+  box-sizing: border-box; }
+  .normal-login .clearfix {
+    zoom: 1; }
+    .normal-login .clearfix::before {
+      content: "";
+      display: table; }
+    .normal-login .clearfix::after {
+      content: "";
+      display: table;
+      clear: both; }
+    .normal-login .clearfix .clear-left {
+      font-size: 11px;
+      font-weight: normal;
+      line-height: 16px;
+      letter-spacing: normal;
+      display: block;
+      float: left;
+      color: #a8aeb3;
+      margin: 0px;
+      text-decoration: underline; }
+      .normal-login .clearfix .clear-left:hover {
+        color: #106ba3; }
+    .normal-login .clearfix .clear-right {
+      font-size: 11px;
+      font-weight: normal;
+      line-height: 16px;
+      letter-spacing: normal;
+      display: block;
+      text-align: right;
+      float: right;
+      color: #a8aeb3;
+      margin: 0px;
+      text-decoration: underline; }
+      .normal-login .clearfix .clear-right:hover {
+        color: #106ba3; }
+  .normal-login .login-btn {
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: 16px 0px;
+    padding: 0px 20px;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    vertical-align: middle;
+    color: white;
+    background-color: #ff922b;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    border-radius: 3px;
+    border-width: 0px;
+    outline: none;
+    transition: background-color 0.1s ease 0s; }
+    .normal-login .login-btn:hover {
+      background-color: #f77800; }
+    .normal-login .login-btn .btn-text {
+      vertical-align: middle; }
+</style><style>.input-area {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 16px; }
+  .input-area .input-label {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0px 0px 4px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    color: #3e4042; }
+  .input-area .input-content {
+    box-sizing: border-box;
+    display: block; }
+    .input-area .input-content .input-box {
+      box-sizing: border-box;
+      padding: 0px 16px;
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      background-color: white;
+      color: #3e4042;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #dde0e2;
+      border-radius: 3px; }
+      .input-area .input-content .input-box:hover {
+        border-width: 1px;
+        border-style: solid;
+        border-color: #bdc2c6;
+        border-image: initial; }
+      .input-area .input-content .input-box:focus {
+        outline: none;
+        border-color: #3e4042; }
+    .input-area .input-content .input-box-error {
+      box-sizing: border-box;
+      padding: 0px 16px;
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      background-color: white;
+      color: #3e4042;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ff5252;
+      border-radius: 3px;
+      outline: none; }
+    .input-area .input-content .h6 {
+      display: none;
+      align-items: center;
+      color: #ff5252;
+      margin: 2px 0px;
+      font-weight: 600; }
+      .input-area .input-content .h6 svg path {
+        fill: #ff5252; }
+      .input-area .input-content .h6 .alert-message {
+        margin-left: 2px;
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: normal; }
+    .input-area .input-content .h6-error {
+      display: flex;
+      align-items: center;
+      color: #ff5252;
+      margin: 2px 0px;
+      font-weight: 600; }
+      .input-area .input-content .h6-error svg path {
+        fill: #ff5252; }
+      .input-area .input-content .h6-error .alert-message {
+        margin-left: 2px;
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: normal; }
+</style><style>.social-login {
+  box-sizing: border-box; }
+  .social-login .facebook-btn {
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 16px;
+    padding: 0px 16px;
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    border-image: initial;
+    border-color: #dde0e2;
+    color: white;
+    background-color: #3b5998;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    text-decoration-line: none;
+    transition: background-color 0.1s ease 0s;
+    outline: none; }
+    .social-login .facebook-btn span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      vertical-align: middle; }
+      .social-login .facebook-btn span img {
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+        vertical-align: middle;
+        border-style: none; }
+  .social-login .kakao-btn {
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 16px;
+    padding: 0px 16px;
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    border-image: initial;
+    border-color: #dde0e2;
+    color: #490404;
+    background-color: #ffe500;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    text-decoration-line: none;
+    transition: background-color 0.1s ease 0s;
+    outline: none; }
+    .social-login .kakao-btn span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      vertical-align: middle; }
+      .social-login .kakao-btn span img {
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+        vertical-align: middle;
+        border-style: none; }
+</style><style></style><style>.intro-body1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex; }
+
+.intro-content {
+  width: 54%;
+  height: 100%;
+  background-color: white; }
+  .intro-content .intro-logo {
+    display: flex;
+    margin-left: 33px;
+    margin-top: 20px; }
+    .intro-content .intro-logo .main-logo {
+      font-weight: 700;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 10px;
+      border-radius: 1%;
+      text-decoration: none; }
+    .intro-content .intro-logo .main-101 {
+      font-weight: 730;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 13px;
+      border-radius: 1%;
+      text-decoration: none;
+      margin-left: 3px; }
+    .intro-content .intro-logo .creator {
+      color: white;
+      font-weight: 700;
+      font-size: 25px;
+      margin-left: 2%;
+      margin-bottom: 0.7%; }
+  .intro-content .intro-contents {
+    width: 67%;
+    margin-top: 23%;
+    animation: handleContents 2s; }
+
+@keyframes handleContents {
+  0% {
+    opacity: 0.1;
+    margin-top: 10%; }
+  100% {
+    opacity: 1;
+    margin-top: 23%; } }
+    .intro-content .intro-contents .intro-contents-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: #3e4042;
+      line-height: 56px;
+      letter-spacing: -1px;
+      margin-bottom: 35px; }
+    .intro-content .intro-contents .intro-contents-state {
+      font-size: 19px;
+      font-weight: normal;
+      color: #3e4042;
+      line-height: 24px;
+      letter-spacing: -0.2px; }
+    .intro-content .intro-contents .intro-button {
+      width: 62px;
+      display: inline-flex;
+      text-align: center;
+      vertical-align: middle;
+      color: white;
+      background-color: #ff922b;
+      font-weight: 550;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      height: 45px;
+      text-decoration-line: none;
+      border-radius: 3px;
+      padding: 0px 16px;
+      margin-top: 30px; }
+
+.intro-img1 {
+  background-image: url(/static/media/intro1.dc42a011.png);
+  width: 46%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: handleImg 2s; }
+
+@keyframes handleImg {
+  0% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+</style><style>.intro-body2 {
+  width: 100vw;
+  height: 100vh;
+  display: flex; }
+
+.intro-content {
+  width: 54%;
+  height: 100%;
+  background-color: white; }
+  .intro-content .intro-logo {
+    display: flex;
+    margin-left: 33px;
+    margin-top: 20px; }
+    .intro-content .intro-logo .main-logo {
+      font-weight: 700;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 10px;
+      border-radius: 1%;
+      text-decoration: none; }
+    .intro-content .intro-logo .main-101 {
+      font-weight: 730;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 13px;
+      border-radius: 1%;
+      text-decoration: none;
+      margin-left: 3px; }
+    .intro-content .intro-logo .creator {
+      color: white;
+      font-weight: 700;
+      font-size: 25px;
+      margin-left: 2%;
+      margin-bottom: 0.7%; }
+  .intro-content .intro-contents {
+    width: 67%;
+    margin: auto;
+    margin-top: 23%; }
+    .intro-content .intro-contents .intro-contents-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: #3e4042;
+      line-height: 56px;
+      letter-spacing: -1px;
+      margin-bottom: 35px; }
+    .intro-content .intro-contents .intro-contents-state {
+      font-size: 19px;
+      font-weight: normal;
+      color: #3e4042;
+      line-height: 24px;
+      letter-spacing: -0.2px; }
+    .intro-content .intro-contents .intro-button {
+      width: 62px;
+      display: inline-flex;
+      text-align: center;
+      vertical-align: middle;
+      color: white;
+      background-color: #ff922b;
+      font-weight: 550;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      height: 45px;
+      text-decoration-line: none;
+      border-radius: 3px;
+      padding: 0px 16px;
+      margin-top: 30px; }
+
+.intro-img2 {
+  background-image: url(/static/media/intro2.af8ca28b.png);
+  width: 46%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: handleImg 2s; }
+
+@keyframes handleImg {
+  0% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+</style><style>.intro-body3 {
+  width: 100vw;
+  height: 100vh;
+  display: flex; }
+
+.intro-content {
+  width: 54%;
+  height: 100%;
+  background-color: white; }
+  .intro-content .intro-logo {
+    display: flex;
+    margin-left: 33px;
+    margin-top: 20px; }
+    .intro-content .intro-logo .main-logo {
+      font-weight: 700;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 10px;
+      border-radius: 1%;
+      text-decoration: none; }
+    .intro-content .intro-logo .main-101 {
+      font-weight: 730;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      background-color: black;
+      height: 3.9vh;
+      padding: 0 13px;
+      border-radius: 1%;
+      text-decoration: none;
+      margin-left: 3px; }
+    .intro-content .intro-logo .creator {
+      color: white;
+      font-weight: 700;
+      font-size: 25px;
+      margin-left: 2%;
+      margin-bottom: 0.7%; }
+  .intro-content .intro-contents {
+    width: 67%;
+    margin: auto;
+    margin-top: 23%; }
+    .intro-content .intro-contents .intro-contents-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: #3e4042;
+      line-height: 56px;
+      letter-spacing: -1px;
+      margin-bottom: 35px; }
+    .intro-content .intro-contents .intro-contents-state {
+      font-size: 19px;
+      font-weight: normal;
+      color: #3e4042;
+      line-height: 24px;
+      letter-spacing: -0.2px; }
+    .intro-content .intro-contents .intro-button {
+      width: auto;
+      display: inline-flex;
+      text-align: center;
+      vertical-align: middle;
+      color: white;
+      background-color: #ff922b;
+      font-weight: 550;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      height: 45px;
+      text-decoration-line: none;
+      border-radius: 3px;
+      padding: 0px 16px;
+      margin-top: 30px; }
+
+.intro-img3 {
+  background-image: url(/static/media/intro3.ea9f5d77.png);
+  width: 46%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: handleImg 2s; }
+
+@keyframes handleImg {
+  0% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+</style><style>.makeclass1 .makeclass-body {
+  width: 100%;
+  height: 600px; }
+  .makeclass1 .makeclass-body .makeclass-topbar {
+    display: flex;
+    padding-top: 76px;
+    height: 5px;
+    background-color: #fa0000;
+    width: 100%; }
+    .makeclass1 .makeclass-body .makeclass-topbar .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: #c2c2c2;
+      position: fixed;
+      z-index: -3; }
+    .makeclass1 .makeclass-body .makeclass-topbar .makeclass-topbaryes {
+      width: 38%;
+      height: 5px;
+      background-color: #fd7e14;
+      animation: handleTopbar 2s; }
+
+@keyframes handleTopbar {
+  0% {
+    width: 16%; }
+  100% {
+    width: 38%; } }
+</style><style>.main-header2 {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px; }
+  .main-header2 .main-nav {
+    background-color: white; }
+    .main-header2 .main-nav .main-nav-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 2vh;
+      width: 40%;
+      min-width: 500px; }
+      .main-header2 .main-nav .main-nav-left .main-logo {
+        margin-left: 2%;
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        height: 4vh;
+        padding: 0.5% 1.8% 0.5% 1.5%;
+        border-radius: 1%;
+        text-decoration: none; }
+      .main-header2 .main-nav .main-nav-left .main-101 {
+        font-weight: 800;
+        font-size: 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        height: 4vh;
+        padding: 0.5% 1.7% 0.5% 1.7%;
+        border-radius: 1%;
+        text-decoration: none;
+        margin-left: 0.5%; }
+      .main-header2 .main-nav .main-nav-left .creator {
+        color: black;
+        font-weight: 700;
+        font-size: 26px;
+        margin-left: 1.6%;
+        margin-bottom: 0.7%; }
+    .main-header2 .main-nav .main-nav-login-box {
+      display: flex;
+      font-weight: 600;
+      font-size: 19px;
+      width: 20%;
+      text-decoration: none; }
+      .main-header2 .main-nav .main-nav-login-box a {
+        text-decoration: none;
+        color: white; }
+      .main-header2 .main-nav .main-nav-login-box a :visited {
+        text-decoration: none; }
+      .main-header2 .main-nav .main-nav-login-box a:hover {
+        text-decoration: none; }
+      .main-header2 .main-nav .main-nav-login-box .main-nav-login {
+        margin-right: 8%; }
+</style><style>* {
+  box-sizing: border-box; }
+
+.myclass-nav2 {
+  background-color: whitesmoke;
+  width: 270px;
+  height: 100%;
+  position: fixed;
+  border-top: 1px solid #888888; }
+  .myclass-nav2 .nav2-border {
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    margin-top: 75px; }
+  .myclass-nav2 .nav-contents {
+    margin-top: 100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    font-weight: 520; }
+</style><style>.makeclass2 .makeclass-body {
+  width: 100%;
+  height: 600px; }
+  .makeclass2 .makeclass-body .makeclass-topbar {
+    display: flex;
+    padding-top: 76px;
+    height: 5px;
+    background-color: #fa0000;
+    width: 100%; }
+    .makeclass2 .makeclass-body .makeclass-topbar .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: #c2c2c2;
+      position: fixed;
+      z-index: -3; }
+    .makeclass2 .makeclass-body .makeclass-topbar .makeclass-topbaryes {
+      width: 58%;
+      height: 5px;
+      background-color: #fd7e14;
+      animation: handleTopbar2 2s; }
+
+@keyframes handleTopbar2 {
+  0% {
+    width: 38%; }
+  100% {
+    width: 58%; } }
+</style><style>.makeclass3 .makeclass-body {
+  width: 100%;
+  height: 600px; }
+  .makeclass3 .makeclass-body .makeclass-topbar {
+    display: flex;
+    padding-top: 76px;
+    height: 5px;
+    background-color: #fa0000;
+    width: 100%; }
+    .makeclass3 .makeclass-body .makeclass-topbar .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: #c2c2c2;
+      position: fixed;
+      z-index: -3; }
+    .makeclass3 .makeclass-body .makeclass-topbar .makeclass-topbaryes {
+      width: 80%;
+      height: 5px;
+      background-color: #fd7e14;
+      animation: handleTopbar3 2s; }
+
+@keyframes handleTopbar3 {
+  0% {
+    width: 58%; }
+  100% {
+    width: 80%; } }
+</style><style>.makeclass4 .makeclass-body {
+  width: 100%;
+  height: 600px; }
+  .makeclass4 .makeclass-body .makeclass-topbar {
+    display: flex;
+    padding-top: 76px;
+    height: 5px;
+    background-color: #fa0000;
+    width: 100%; }
+    .makeclass4 .makeclass-body .makeclass-topbar .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: #c2c2c2;
+      position: fixed;
+      z-index: -3; }
+    .makeclass4 .makeclass-body .makeclass-topbar .makeclass-topbaryes {
+      width: 100%;
+      height: 5px;
+      background-color: #fd7e14;
+      animation: handleTopbar4 2s; }
+
+@keyframes handleTopbar4 {
+  0% {
+    width: 80%; }
+  100% {
+    width: 100%; } }
+</style><style>.makeclass5 .makeclass-body {
+  width: 100%;
+  height: 600px; }
+  .makeclass5 .makeclass-body .makeclass-topbar {
+    display: flex;
+    padding-top: 76px;
+    height: 5px;
+    background-color: #fa0000;
+    width: 100%; }
+    .makeclass5 .makeclass-body .makeclass-topbar .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: #c2c2c2;
+      position: fixed;
+      z-index: -3; }
+    .makeclass5 .makeclass-body .makeclass-topbar .makeclass-topbaryes {
+      width: 97%;
+      height: 5px;
+      background-color: #fd7e14; }
+</style><style>.makeclass6 .makeclass-body {
+  width: 100%;
+  height: 600px; }
+  .makeclass6 .makeclass-body .makeclass-topbar {
+    display: flex;
+    padding-top: 76px;
+    height: 5px;
+    background-color: #fa0000;
+    width: 100%; }
+    .makeclass6 .makeclass-body .makeclass-topbar .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: #c2c2c2;
+      position: fixed;
+      z-index: -3; }
+    .makeclass6 .makeclass-body .makeclass-topbar .makeclass-topbaryes {
+      width: 97%;
+      height: 5px;
+      background-color: #fd7e14; }
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="makeclass1"><div class="main-header2"><div class="main-nav"><div class="main-nav-left"><a class="main-logo" href="http://localhost:3000/">&gt;WECODE</a><div class="main-101">IOI</div><div class="creator">creator</div><div class="main-nav-tab"></div></div><div class="main-nav-login-box"></div></div></div><div class="myclass-nav2"><div class="nav2-border"></div><div class="nav-contents"></div></div><div class="makeclass-body"><div class="makeclass-topbar"><div class="makeclass-topbaryes"></div><div class="makeclass-topbarno"></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/1.chunk.js"></script><script src="./React App_files/main.chunk.js"></script>
+
+</body></html>

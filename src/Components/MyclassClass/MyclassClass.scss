@@ -1,0 +1,42 @@
+.myclass-class {
+  height: 280px;
+  width: 30%;
+  max-width: 340px;
+  margin-right: 1.7%;
+  background-color: white;
+  box-shadow: rgba(41, 42, 43, 0.16) 0px 1px 3px -1px,
+    rgba(0, 0, 0, 0.04) 0px 0px 1px 1px;
+  .myclass-img {
+    height: 70%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .myclass-contents {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 16px;
+    .myclass-title {
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .myclass-utill {
+      width: 16px;
+    }
+  }
+  .myclass-status {
+    margin-left: 16px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 10px;
+    background-color: black;
+    width: 75px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+  }
+}

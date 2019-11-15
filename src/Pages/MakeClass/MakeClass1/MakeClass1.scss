@@ -1,0 +1,47 @@
+.makeclass1 {
+  .makeclass-body {
+    width: 100%;
+    height: 600px;
+    left: 270px;
+
+    .makeclass-topbar {
+      display: flex;
+      padding-top: 76px;
+      height: 5px;
+      background-color: rgb(250, 0, 0);
+      width: 100%;
+
+      .makeclass-topbarno {
+        width: 100%;
+        height: 5px;
+        background-color: rgb(194, 194, 194);
+        position: fixed;
+        z-index: -1;
+      }
+      .makeclass-topbaryes {
+        width: 38%;
+        height: 5px;
+        background-color: rgb(253, 126, 20);
+        animation: handleTopbar 2s;
+      }
+      @keyframes handleTopbar {
+        0% {
+          width: 16%;
+        }
+        100% {
+          width: 38%;
+        }
+      }
+    }
+    .makeclass-contents {
+      height: 200px;
+      margin-top: 65px;
+      width: 70%;
+      margin-left: 22%;
+      .button {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}

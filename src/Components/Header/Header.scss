@@ -1,0 +1,74 @@
+.main-nav {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #202125;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+
+  .main-nav-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 8vh;
+    width: 40%;
+    min-width: 500px;
+    .main-logo {
+      margin-left: 2%;
+      font-weight: 800;
+      font-size: 20px;
+      color: black;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      height: 3vh;
+      padding: 0.3% 1.2% 0.4% 1.2%;
+      border-radius: 1%;
+      text-decoration: none;
+    }
+    .main-101 {
+      font-weight: 800;
+      font-size: 20px;
+      color: black;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      height: 3vh;
+      padding: 0.3% 1.1% 0.4% 1.2%;
+      border-radius: 1%;
+      text-decoration: none;
+      margin-left: 1%;
+    }
+    .creator {
+      color: white;
+      font-weight: 700;
+      font-size: 25px;
+      margin-left: 2%;
+      margin-bottom: 0.7%;
+    }
+  }
+  .main-nav-login-box {
+    display: flex;
+    font-weight: 600;
+    font-size: 19px;
+    width: 20%;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a :visited {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .main-nav-login {
+      margin-right: 8%;
+    }
+  }
+}
