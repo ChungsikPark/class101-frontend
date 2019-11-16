@@ -1,0 +1,23 @@
+.make-class-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 0px;
+
+  .make-class {
+    width: 100%;
+    position: relative;
+    padding-top: 75px;
+    padding-left: 240px;
+
+    .main-section {
+      display: flex;
+      height: 100%;
+      position: relative;
+      background-color: rgb(255, 255, 255);
+
+      .contents-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}

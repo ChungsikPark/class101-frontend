@@ -125,7 +125,7 @@ export class Register extends Component {
             </span>
           </label>
         </div>
-        <button className="signup-btn">
+        <button className="signup-btn" onClick="">
           <span className="signup-btn-text">가입하기</span>
         </button>
       </div>
