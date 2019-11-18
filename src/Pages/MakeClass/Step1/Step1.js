@@ -52,8 +52,8 @@ export class Step1 extends Component {
               <div className="contents-body-left">
                 <div className="class-category">
                   <label className="class-title">클래스 카테고리</label>
-                  <select className="class-category-select">
-                    <option value="true" hidden>
+                  <select className="class-category-select" required>
+                    <option disabled selected hidden value="">
                       클래스 분야를 선택해 주세요.
                     </option>
                     <option value="공예">공예</option>
@@ -70,8 +70,8 @@ export class Step1 extends Component {
                 </div>
                 <div className="class-level">
                   <label className="class-title">클래스 난이도</label>
-                  <select className="class-level-select">
-                    <option value="true" hidden>
+                  <select className="class-level-select" required>
+                    <option disabled selected hidden value="">
                       클래스의 난이도를 선택해주세요.
                     </option>
                     <option value="초급">입문자</option>
@@ -86,12 +86,7 @@ export class Step1 extends Component {
                   <div className="topic-sample-wrapper">
                     <div className="sample-title">
                       <span className="svg-flex">
-                        <SVG
-                          width="18"
-                          height="18"
-                          d="sampleCheck"
-                          fill="#00b79d"
-                        />
+                        <SVG width="18" height="18" d="check" fill="#00b79d" />
                       </span>
                       클래스 주제 작성법
                     </div>
@@ -147,6 +142,14 @@ export class Step1 extends Component {
                       placeholder="클래스를 대표할 수 있는 제목을 정해주세요."
                       autoComplete="off"
                     />
+                    {this.state.isNameInputLessError &&
+                      this.state.isNameInputOverError && (
+                        <h6 className="name-input-alert">
+                          <span className="name-letter-count">
+                            0자 / 최대 25자
+                          </span>
+                        </h6>
+                      )}
                     {!this.state.isNameInputLessError && (
                       <h6 className="name-input-alert">
                         <SVG

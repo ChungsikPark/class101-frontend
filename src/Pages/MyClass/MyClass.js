@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
-import "./MyClass.scss";
 import Header from "Components/Header";
 import Nav from "Components/Nav";
 import MyclassClass from "Components/MyclassClass";
-import utill from "Img/utill.png";
+// import utill from "Img/utill.png";
 import MyClassMock from "./MyClassMock";
+import "./MyClass.scss";
 
 export class MyClass extends Component {
   constructor(props) {

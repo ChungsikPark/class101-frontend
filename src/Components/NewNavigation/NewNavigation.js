@@ -6,16 +6,16 @@ export class NewNavigation extends Component {
   state = {
     isFirstOneSelected: false,
     isFirstTwoSelected: true,
-    isSecondOneSelected: true,
-    isSecondTwoSelected: true,
-    isThirdOneSelected: true,
-    isThirdTwoSelected: true,
+    isSecondOneSelected: false,
+    isSecondTwoSelected: false,
+    isThirdOneSelected: false,
+    isThirdTwoSelected: false,
     isFirstOneDone: true,
-    isFirstTwoDone: true,
-    isSecondOneDone: true,
-    isSecondTwoDone: true,
+    isFirstTwoDone: false,
+    isSecondOneDone: false,
+    isSecondTwoDone: false,
     isThirdOneDone: true,
-    isThirdTwoDone: true
+    isThirdTwoDone: false
   };
   render() {
     return (
@@ -23,7 +23,7 @@ export class NewNavigation extends Component {
         <div className="navigation">
           <div className="navigation-title">
             <div className="navigation-title-text">01 클래스 기본정보</div>
-            {(this.state.isFirstOneDone, this.state.isFirstTwoDone) && (
+            {this.state.isFirstOneDone && this.state.isFirstTwoDone && (
               <SVG width="20" height="20" d="check" fill="rgb(62, 64, 66)" />
             )}
           </div>
@@ -63,7 +63,7 @@ export class NewNavigation extends Component {
         <div className="navigation">
           <div className="navigation-title">
             <div className="navigation-title-text">02 클래스 소개하기</div>
-            {(this.state.isSecondOneDone, this.state.isSecondTwoDone) && (
+            {this.state.isSecondOneDone && this.state.isSecondTwoDone && (
               <SVG width="20" height="20" d="check" fill="rgb(62, 64, 66)" />
             )}
           </div>
@@ -103,7 +103,7 @@ export class NewNavigation extends Component {
         <div className="navigation">
           <div className="navigation-title">
             <div className="navigation-title-text">03 크리에이터 소개하기</div>
-            {(this.state.isThirdOneDone, this.state.isThirdTwoDone) && (
+            {this.state.isThirdOneDone && this.state.isThirdTwoDone && (
               <SVG width="20" height="20" d="check" fill="rgb(62, 64, 66)" />
             )}
           </div>

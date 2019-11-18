@@ -4,11 +4,21 @@ import InputArea from "./InputArea";
 import "./NormalLogin.scss";
 
 export class NormalLogin extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   goToNext = () => {
     this.props.history.push("/myclass");
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="normal-login">
         <InputArea
@@ -17,6 +27,7 @@ export class NormalLogin extends Component {
           inputName="email"
           placeholder="example@naver.com"
           alertMessage="메일을 입력해주세요."
+          handleInput={this.handleInput}
         />
         <InputArea
           labelText="비밀번호"
@@ -24,6 +35,7 @@ export class NormalLogin extends Component {
           inputName="password"
           placeholder="********"
           alertMessage="패스워드를 입력해주세요."
+          handleInput={this.handleInput}
         />
         <div className="clearfix">
           <a className="clear-left" href="/">
