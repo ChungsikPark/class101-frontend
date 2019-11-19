@@ -18,21 +18,27 @@ export class Step1 extends Component {
 
   handleNameInputError = e => {
     this.setState({
-      isNameInputLessError: e.target.value.length > 0,
+      isNameInputLessError: e.target.value.length >= 0,
       isNameInputOverError: e.target.value.length < 26
     });
   };
 
-  goToNext = () => {
+  goToAfter = () => {
     this.props.history.push("/makeclass/2");
   };
+
+  handleOnClick = () => {
+    this.goToAfter();
+    this.props.changeNextStep();
+  };
+
   render() {
     let topicNormal = "topic-input";
     let topicError = "topic-input-error";
     let nameNormal = "name-input";
     let nameError = "name-input-error";
     return (
-      <div className="contents-wrapper">
+      <div className="contents-wrapper1">
         <div className="progress-bar">
           <div className="progress-bar-status"></div>
         </div>
@@ -176,7 +182,7 @@ export class Step1 extends Component {
                 </div>
                 <div className="next-btn-wrapper">
                   <button
-                    onClick={this.goToNext}
+                    onClick={this.handleOnClick}
                     className="next-btn"
                     type="submit"
                     color="orange"
@@ -211,7 +217,7 @@ export class Step1 extends Component {
                     클래스 주제와 제목에도 정답이 있고 오답이 있다?
                   </div>
                   <span className="a-flex">
-                    <a className="guide-link" href="/makeclass/makeclass1">
+                    <a className="guide-link" href="/makeclass/1">
                       <span className="guide-link-text">
                         정답이 궁금하다면 클릭!
                       </span>

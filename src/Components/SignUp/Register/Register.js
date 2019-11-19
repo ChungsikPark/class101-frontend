@@ -12,6 +12,35 @@ export class Register extends Component {
     isEssentialPath: true,
     isSelectionPath: true
   };
+
+  handleOnClick = event => {
+    event.preventDefault();
+    console.log(this.state);
+    const url = "";
+    const data = {
+      name: this.state.name,
+      email: this.state.email,
+      phoneNumber: this.state.phoneNumber,
+      password: this.state.password
+    };
+
+    fetch(url, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        if (response.SUCCESS === "200") {
+          this.props.history.push("/");
+        } else {
+          console.log("error");
+        }
+      });
+  };
+
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -113,7 +142,7 @@ export class Register extends Component {
             </span>
           </label>
         </div>
-        <button className="signup-btn">
+        <button className="signup-btn" onClick={this.handleOnClick}>
           <span className="signup-btn-text">가입하기</span>
         </button>
       </div>
