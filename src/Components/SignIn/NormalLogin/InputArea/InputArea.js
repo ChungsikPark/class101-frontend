@@ -7,10 +7,10 @@ export class InputArea extends Component {
     blankH6: true
   };
 
-  handleInput = e => {
+  handleInAlert = e => {
     this.setState({
-      blankInput: e.target.value.length > 0 ? true : false,
-      blankH6: e.target.value.length > 0 ? true : false
+      blankInput: e.target.value.length > 0,
+      blankH6: e.target.value.length > 0
     });
   };
 
@@ -24,8 +24,9 @@ export class InputArea extends Component {
         <label className="input-label">{this.props.labelText}</label>
         <div className="input-content">
           <input
-            onChange={this.handleInput}
-            onBlur={this.handleInput}
+            onInput={this.props.handleInput}
+            onChange={this.handleInAlert}
+            onBlur={this.handleInAlert}
             className={this.state.blankInput ? rightInput : errorInput}
             type={this.props.inputType}
             name={this.props.inputName}

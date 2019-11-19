@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./SocialLogin.scss";
 import facebook from "Img/facebook_logo.png";
 import kakao from "Img/kakao_logo.png";
+import "./SocialLogin.scss";
 
 export class SocialLogin extends Component {
   componentDidMount() {

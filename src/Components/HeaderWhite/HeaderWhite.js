@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Header2.scss";
 import { Link } from "react-router-dom";
+import "./HeaderWhite.scss";
 
 export class HeaderWhite extends Component {
   render() {
@@ -15,14 +15,7 @@ export class HeaderWhite extends Component {
             <div className="creator">creator</div>
             <div className="main-nav-tab"></div>
           </div>
-          <div className="main-nav-login-box">
-            {/* <Link to={"/signin"} className="main-nav-login">
-              로그인
-            </Link>
-            <Link to={"/signup"} className="main-nav-signup">
-              회원가입
-            </Link> */}
-          </div>
+          <div className="main-nav-login-box"></div>
         </div>
       </div>
     );

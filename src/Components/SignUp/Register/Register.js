@@ -4,41 +4,24 @@ import "./Register.scss";
 
 export class Register extends Component {
   state = {
+    name: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    password2: "",
     isEssentialPath: true,
     isSelectionPath: true
+  };
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handlePath = s => {
     this.setState({ [s]: !this.state[s] });
-    // console.log({ [s]: !this.state[s] });
-    // this.setState({ [isSelectionPath]: !this.state.isSelectionPath });
   };
 
-  // handleEssentialPath = () => {
-  //   this.setState({ isEssentialPath: !this.state.isEssentialPath });
-  // };
-
-  // handleSelectionPath = () => {
-  //   this.setState({ isSelectionPath: !this.state.isSelectionPath });
-  // };
-
-  // handleEssentialPath = e => {
-  //   if (this.state.isEssentialPath === true) {
-  //     this.setState({ isEssentialPath: false });
-  //   } else {
-  //     this.setState({ isEssentialPath: true });
-  //   }
-  // };
-
-  // handleSelectionPath = () => {
-  //   if (this.state.isSelectionPath === true) {
-  //     this.setState({ isSelectionPath: false });
-  //   } else {
-  //     this.setState({ isSelectionPath: true });
-  //   }
-  // };
-
   render() {
+    console.log(this.state);
     let normalPath = "normal-path";
     let selectPath = "select-path";
     return (
@@ -49,6 +32,7 @@ export class Register extends Component {
           inputName="name"
           placeholder="홍길동"
           alertMessage="이름을 입력해주세요."
+          handleInput={this.handleInput}
         />
         <RegisterArea
           labelText="이메일"
@@ -56,6 +40,7 @@ export class Register extends Component {
           inputName="email"
           placeholder="example@naver.com"
           alertMessage="메일을 입력해주세요."
+          handleInput={this.handleInput}
         />
         <RegisterArea
           labelText="휴대폰 번호"
@@ -63,6 +48,7 @@ export class Register extends Component {
           inputName="phoneNumber"
           placeholder="-를 제외한 휴대폰 번호를 입력해주세요"
           alertMessage="휴대폰 번호를 입력해주세요."
+          handleInput={this.handleInput}
         />
         <RegisterArea
           labelText="비밀번호 (8자 이상)"
@@ -70,6 +56,7 @@ export class Register extends Component {
           inputName="password"
           placeholder="********"
           alertMessage="패스워드를 입력해주세요."
+          handleInput={this.handleInput}
         />
         <RegisterArea
           labelText="비밀번호 확인"
@@ -77,6 +64,7 @@ export class Register extends Component {
           inputName="password2"
           placeholder="********"
           alertMessage="패스워드 확인을 입력해주세요."
+          handleInput={this.handleInput}
         />
         <div className="checkbox-wrapper">
           <label className=" cb-label">
