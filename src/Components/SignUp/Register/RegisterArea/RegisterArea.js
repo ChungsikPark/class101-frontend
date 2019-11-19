@@ -22,6 +22,7 @@ export class RegisterArea extends Component {
         <label className="rg-label">{this.props.labelText}</label>
         <div className="rg-input-wrapper">
           <input
+            onInput={this.props.handleInput}
             onChange={this.handleRgAlert}
             onBlur={this.handleRgAlert}
             className={this.state.blankRgAlert ? rightInput : errorInput}

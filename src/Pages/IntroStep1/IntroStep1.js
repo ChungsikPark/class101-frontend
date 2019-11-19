@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./IntroStep.scss";
 
 export class IntroStep1 extends Component {
@@ -38,4 +38,4 @@ export class IntroStep1 extends Component {
   }
 }
 
-export default IntroStep1;
+export default withRouter(IntroStep1);

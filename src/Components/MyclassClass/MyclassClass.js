@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./MyclassClass.scss";
 import utill from "../../Img/utill.png";
+import "./MyclassClass.scss";
 
 export class MyclassClass extends Component {
   render() {
@@ -19,7 +19,7 @@ export class MyclassClass extends Component {
         />
         <div className="myclass-contents">
           <div className="myclass-title">{info.classname}</div>
-          <img src={utill} className="myclass-utill" />
+          <img src={utill} className="myclass-utill" alt="" />
         </div>
         <div className="myclass-status">클래스 진행중</div>
       </div>
