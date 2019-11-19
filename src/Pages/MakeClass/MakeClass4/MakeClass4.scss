@@ -2,6 +2,7 @@
   .makeclass-body {
     width: 100%;
     height: 600px;
+
     .makeclass-topbar {
       display: flex;
       padding-top: 76px;
@@ -19,6 +20,7 @@
       .makeclass-topbaryes {
         width: 100%;
         height: 5px;
+        position: fixed;
         background-color: rgb(253, 126, 20);
         animation: handleTopbar4 2s;
       }
@@ -33,12 +35,137 @@
     }
     .makeclass-contents {
       height: 200px;
-      margin-top: 65px;
-      width: 70%;
+      margin-top: 50px;
+      width: 60%;
       margin-left: 22%;
-      .button {
-        width: 100px;
-        height: 100px;
+      display: flex;
+      .makeclass-maincontents {
+        width: 68%;
+        .maincontents-firsttitle {
+          font-size: 19px;
+          font-weight: bold;
+          color: rgb(253, 126, 20);
+          margin-bottom: 10px;
+        }
+        .maincontents-subtitle {
+          font-size: 27px;
+          font-weight: bold;
+          line-height: 24px;
+        }
+        .maincontents-recommendtitle {
+          margin-top: 30px;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+        .maincontents-helpbox {
+          background-color: rgb(245, 245, 245);
+          padding: 18px 17px 25px 17px;
+          font-size: 14px;
+          .helpbox-title {
+            font-size: 17px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+          }
+          .helpbox-contents {
+            color: rgb(88, 88, 88);
+            .helpbox-info1 {
+              width: 99%;
+              margin-top: 10px;
+            }
+          }
+        }
+        // .maincontents-object {
+        //   margin: 17px 0 17px 0;
+        //   .object-title {
+        //     font-size: 16px;
+        //     margin-bottom: 5px;
+        //   }
+
+        //   .object-inputholder {
+        //     border: 1px solid rgb(216, 216, 216);
+        //     border-radius: 3px;
+        //     height: 50px;
+        //     padding: 0 2% 0 2%;
+
+        //     .object-input {
+        //       width: 100%;
+        //       border: none;
+        //       height: 95%;
+        //       font-size: 17px;
+        //       margin-top: 1px;
+        //       outline: none;
+        //     }
+        //   }
+        // }
+        .maincontents-fake {
+          margin: 30px 0 17px 0;
+          background-color: rgb(245, 245, 245);
+          justify-content: center;
+          align-items: center;
+          font-size: 16px;
+          display: flex;
+          border-radius: 3px;
+          height: 50px;
+          padding: 0 2% 0 2%;
+          margin-bottom: 20px;
+        }
+        .buttons-back {
+          width: 65px;
+          height: 45px;
+          border: none;
+          background-color: rgb(245, 245, 245);
+          font-size: 15px;
+          font-weight: 500;
+          border-radius: 3px;
+        }
+        .buttons-next {
+          width: 65px;
+          height: 40px;
+          margin-left: 15px;
+          border: none;
+          background-color: #fd7e14;
+          font-size: 15px;
+          font-weight: 600;
+          color: white;
+          opacity: 0.5;
+          border-radius: 3px;
+          margin-bottom: 100px;
+        }
+        .buttons-next {
+          width: 65px;
+          height: 40px;
+          margin-left: 15px;
+          border: none;
+          background-color: #fd7e14;
+          font-size: 15px;
+          font-weight: 600;
+          color: white;
+
+          border-radius: 3px;
+          margin-bottom: 100px;
+        }
+      }
+      .makeclass-subcontents {
+        width: 32%;
+        height: auto;
+        .subcontents-ballon {
+          width: 95%;
+          padding: 20px;
+          background-color: rgb(245, 245, 245);
+          margin-left: 4.5%;
+          margin-top: 127px;
+          .ballon-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          .ballon-content {
+            font-size: 15px;
+          }
+        }
       }
     }
   }

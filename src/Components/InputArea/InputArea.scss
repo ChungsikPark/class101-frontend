@@ -1,0 +1,75 @@
+.maincontents-object {
+  margin: 17px 0 17px 0;
+  .object-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .object-inputholder {
+    .object-input {
+      width: 100%;
+      border: 1px solid rgb(216, 216, 216);
+      height: 95%;
+      height: 50px;
+      border-radius: 3px;
+      font-size: 16px;
+      padding: 0 2% 0 2%;
+      outline: none;
+      &:hover {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(189, 194, 198);
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid rgb(62, 64, 66);
+      }
+    }
+  }
+  .object-alert {
+    display: none;
+    color: red;
+    font-size: 13px;
+    // display: flex;
+    align-items: center;
+    margin-left: 2px;
+    margin-top: 3px;
+    span {
+      margin-left: 3px;
+    }
+  }
+  .object-inputholder-red {
+    .object-input {
+      width: 100%;
+      border: 1px solid red;
+      height: 95%;
+      height: 50px;
+      border-radius: 3px;
+      font-size: 16px;
+      padding: 0 2% 0 2%;
+      outline: none;
+      &:hover {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(189, 194, 198);
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid rgb(62, 64, 66);
+      }
+    }
+  }
+  .object-alert-red {
+    color: red;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+    margin-top: 3px;
+    span {
+      margin-left: 3px;
+    }
+  }
+}
+
+//rgb(216, 216, 216);
