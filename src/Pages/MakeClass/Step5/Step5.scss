@@ -60,25 +60,24 @@
           font-weight: 600;
           margin-bottom: 10px;
         }
-        .maincontents-helpbox {
-          background-color: rgb(245, 245, 245);
-          padding: 18px 17px 25px 17px;
-          font-size: 14px;
-          .helpbox-title {
-            font-size: 17px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-          }
-          .helpbox-contents {
-            color: rgb(88, 88, 88);
-            .helpbox-info1 {
-              width: 99%;
-              margin-top: 10px;
-            }
+        .maincontents-pic {
+          border: none;
+          width: 100px;
+          height: 100px;
+          background-position: center;
+          background-size: cover;
+
+          background-repeat: no-repeat;
+        }
+        .img-real-container {
+          .img-real {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            overflow: hidden;
           }
         }
+
         .maincontents-input-name {
           margin: 25px 0 25px 0;
           .object-title {

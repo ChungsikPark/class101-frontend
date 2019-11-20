@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./Step5.scss";
 import MyEditor from "Components/MyEditor";
+import axios from "axios";
+import camera from "Img/camera-btn.png";
+import photoAdd from "Img/photo-add.png";
 
 export class Step5 extends Component {
   state = {
@@ -9,8 +12,42 @@ export class Step5 extends Component {
     reco2: "",
     topic1: "",
     topic2: "",
-    topic3: ""
+    topic3: "",
+    selectedFile: null,
+    previewUrl: null
   };
+  handlePreview = () => {
+    this.setState({ selectedFile: null, previewUrl: null });
+  };
+  handleFileInput = e => {
+    e.preventDefault();
+    let previewFile = new FileReader();
+    let selectedFile = e.target.files[0];
+
+    previewFile.onloadend = () => {
+      this.setState({
+        selectedFile: selectedFile,
+        previewUrl: previewFile.result
+      });
+      console.log("sad");
+    };
+
+    previewFile.readAsDataURL(selectedFile);
+  };
+  handlePost = () => {
+    const formData = new FormData();
+    formData.append("file", this.state.selectedFile);
+
+    return axios
+      .post("http://localhost3000", formData)
+      .then(res => {
+        alert("성공");
+      })
+      .catch(err => {
+        alert("실패");
+      });
+  };
+
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -32,7 +69,26 @@ export class Step5 extends Component {
               </div>
               <div className="maincontents-subtitle">크리에이터 정보</div>
               <div className="maincontents-recommendtitle">프로필사진</div>
-              <div className="maincontents-helpbox">프로필사진넣을곳</div>
+              {!this.state.previewUrl && (
+                <input
+                  type="file"
+                  accept="image/*"
+                  name="file"
+                  onChange={e => this.handleFileInput(e)}
+                  style={{ backgroundImage: `url(${photoAdd})` }}
+                  className="maincontents-pic"
+                />
+              )}
+              {this.state.previewUrl && (
+                <div className="img-real-container">
+                  <img
+                    src={this.state.previewUrl}
+                    alt="myimg"
+                    className="img-real"
+                  ></img>
+                </div>
+              )}
+
               <div className="maincontents-input-name">
                 <div className="object-title">크리에이터 닉네임</div>
                 <div className={`object-inputholder${alert ? "" : "-red"}`}>

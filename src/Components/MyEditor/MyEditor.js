@@ -2,11 +2,11 @@ import React from "react";
 import {
   // Editor,
   EditorState,
-  RichUtils,
-  convertToRaw
+  RichUtils
+  // convertToRaw
 } from "draft-js";
 import Editor from "draft-js-plugins-editor";
-import debounce from "lodash/debounce";
+// import debounce from "lodash/debounce";
 import createHighlightPlugin from "Components/plugins/highlightPlugin";
 import { stateToHTML } from "draft-js-export-html";
 import "./MyEditor.scss";
@@ -17,6 +17,7 @@ class PageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // editorState: "<p>sdf</>"
       editorState: EditorState.createEmpty()
     };
 
@@ -25,8 +26,7 @@ class PageContainer extends React.Component {
 
   onChange = editorState => {
     const contentState = editorState.getCurrentContent();
-    // console.log("content state", convertToRaw(contentState));
-    console.log(stateToHTML(this.state.editorState.getCurrentContent()));
+    // console.log(stateToHTML(this.state.editorState.getCurrentContent()));
     this.setState({
       editorState
     });
