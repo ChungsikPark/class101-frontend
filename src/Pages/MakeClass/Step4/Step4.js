@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import SVG from "Img/SVG";
 import info1 from "Img/makeclass-info1.png";
-import InputArea from "Components/InputArea";
+import InputArea from "Components/MyEditor";
 import "./Step4.scss";
 
 export class Step4 extends Component {
