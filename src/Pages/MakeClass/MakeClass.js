@@ -18,6 +18,8 @@ export class MakeClass extends Component {
     console.log(this.state);
   }
 
+  han;
+
   handlePreStep = () => {
     this.setState({ currentPage: this.state.currentPage - 1 });
   };
@@ -76,7 +78,7 @@ export class MakeClass extends Component {
         <div className="make-class">
           <HeaderWhite />
           <div className="main-section">
-            <NewNavigation />
+            <NewNavigation currentPageNum={this.state.currentPage} />
             {currentPage}
           </div>
         </div>

@@ -7,7 +7,58 @@ export class Step1 extends Component {
   state = {
     isTopicInputError: true,
     isNameInputLessError: true,
-    isNameInputOverError: true
+    isNameInputOverError: true,
+    category: "",
+    categoryId: "",
+    difficulty: "",
+    topic: "",
+    title: ""
+  };
+  componentDidMount() {
+    fetch("http://10.58.6.107:3030/creator/product/category", {
+      method: "GET",
+      headers: { authorization: localStorage.getItem("token") }
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        this.setState({
+          category: response.category
+        });
+      });
+  }
+
+  handleFetch = event => {
+    console.log(this.state);
+    const url = "http://10.58.6.107:3030/creator/product";
+    const data = {
+      categoryId: this.state.categoryId,
+      difficulty: this.state.difficulty,
+      topic: this.state.topic,
+      title: this.state.title
+    };
+
+    fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token")
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        console.log(response);
+        if (response.product) {
+          localStorage.setItem("currentProduct", response.product._id);
+          this.props.history.push("/makeclass/2");
+          this.props.changeNextStep();
+        } else {
+          console.log("error");
+        }
+      });
   };
 
   handleTopicInputError = e => {
@@ -16,23 +67,43 @@ export class Step1 extends Component {
     });
   };
 
-  handleNameInputError = e => {
+  handleTitleInputError = e => {
     this.setState({
-      isNameInputLessError: e.target.value.length >= 0,
+      isNameInputLessError: e.target.value.length > 0,
       isNameInputOverError: e.target.value.length < 26
     });
   };
 
-  goToAfter = () => {
-    this.props.history.push("/makeclass/2");
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleOnClick = () => {
-    this.goToAfter();
-    this.props.changeNextStep();
+  handleTopicOnChange = e => {
+    this.handleInput(e);
+    this.handleTopicInputError(e);
+  };
+
+  handleTitleOnChange = e => {
+    this.handleInput(e);
+    this.handleTitleInputError(e);
+  };
+
+  // goToAfter = () => {
+  //   this.props.history.push("/makeclass/2");
+  // };
+
+  // handleOnClick = () => {
+  //   this.handleFetch();
+  //   this.props.changeNextStep();
+  // };
+
+  handleSelect = e => {
+    console.log(e.target.value);
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
+    console.log(this.state);
     let topicNormal = "topic-input";
     let topicError = "topic-input-error";
     let nameNormal = "name-input";
@@ -58,33 +129,57 @@ export class Step1 extends Component {
               <div className="contents-body-left">
                 <div className="class-category">
                   <label className="class-title">클래스 카테고리</label>
-                  <select className="class-category-select" required>
-                    <option disabled selected hidden value="">
-                      클래스 분야를 선택해 주세요.
-                    </option>
-                    <option value="공예">공예</option>
-                    <option value="디자인, 개발">디자인, 개발</option>
-                    <option value="디지털 드로잉">디지털 드로잉</option>
-                    <option value="라이프 스타일">라이프 스타일</option>
-                    <option value="미술">미술</option>
-                    <option value="사진, 영상">사진, 영상</option>
-                    <option value="시그니처">시그니처</option>
-                    <option value="요리, 음료">요리, 음료</option>
-                    <option value="음악">음악</option>
-                    <option value="커리어">커리어</option>
-                  </select>
+                  {this.state.category && (
+                    <select
+                      className="class-category-select"
+                      name="categoryId"
+                      onChange={this.handleSelect}
+                      required
+                    >
+                      <option disabled selected hidden value="">
+                        클래스 분야를 선택해 주세요.
+                      </option>
+                      <option value={this.state.category[0]._id}>미술</option>
+                      <option value={this.state.category[1]._id}>
+                        디자인, 개발
+                      </option>
+                      <option value={this.state.category[2]._id}>
+                        디지털 드로잉
+                      </option>
+                      <option value={this.state.category[3]._id}>
+                        라이프 스타일
+                      </option>
+                      <option value={this.state.category[4]._id}>공예</option>
+                      <option value={this.state.category[5]._id}>
+                        사진, 영상
+                      </option>
+                      <option value={this.state.category[6]._id}>
+                        시그니처
+                      </option>
+                      <option value={this.state.category[7]._id}>
+                        요리, 음료
+                      </option>
+                      <option value={this.state.category[8]._id}>음악</option>
+                      <option value={this.state.category[9]._id}>커리어</option>
+                    </select>
+                  )}
                 </div>
                 <div className="class-level">
                   <label className="class-title">클래스 난이도</label>
-                  <select className="class-level-select" required>
+                  <select
+                    className="class-level-select"
+                    name="difficulty"
+                    onChange={this.handleSelect}
+                    required
+                  >
                     <option disabled selected hidden value="">
                       클래스의 난이도를 선택해주세요.
                     </option>
-                    <option value="초급">입문자</option>
-                    <option value="초중급">초급자</option>
-                    <option value="중급">중급자</option>
-                    <option value="중상급">준전문가</option>
-                    <option value="상급">전문가</option>
+                    <option value="입문자">입문자</option>
+                    <option value="초급자">초급자</option>
+                    <option value="중급자">중급자</option>
+                    <option value="준전문가">준전문가</option>
+                    <option value="전문가">전문가</option>
                   </select>
                 </div>
                 <div className="class-topic">
@@ -108,13 +203,14 @@ export class Step1 extends Component {
                   </div>
                   <div className="topic-input-wrapper">
                     <input
-                      onChange={this.handleTopicInputError}
+                      onChange={this.handleTopicOnChange}
                       onBlur={this.handleTopicInputError}
                       className={
                         this.state.isTopicInputError ? topicNormal : topicError
                       }
                       type="text"
-                      name="topicInput"
+                      name="topic"
+                      value={this.state.topic}
                       placeholder="내 클래스를 표현하는 한 단어의 주제어를 정해주세요."
                       autoComplete="off"
                     />
@@ -135,8 +231,8 @@ export class Step1 extends Component {
                   <label className="class-title">클래스 제목</label>
                   <div className="name-input-wrapper">
                     <input
-                      onChange={this.handleNameInputError}
-                      onBlur={this.handleNameInputError}
+                      onChange={this.handleTitleOnChange}
+                      onBlur={this.handleTitleInputError}
                       className={
                         this.state.isNameInputLessError &&
                         this.state.isNameInputOverError
@@ -144,7 +240,8 @@ export class Step1 extends Component {
                           : nameError
                       }
                       type="text"
-                      name="titleInput"
+                      name="title"
+                      value={this.state.title}
                       placeholder="클래스를 대표할 수 있는 제목을 정해주세요."
                       autoComplete="off"
                     />
@@ -152,7 +249,7 @@ export class Step1 extends Component {
                       this.state.isNameInputOverError && (
                         <h6 className="name-input-alert">
                           <span className="name-letter-count">
-                            0자 / 최대 25자
+                            {this.state.title.length}자 / 최대 25자
                           </span>
                         </h6>
                       )}
@@ -182,8 +279,15 @@ export class Step1 extends Component {
                 </div>
                 <div className="next-btn-wrapper">
                   <button
-                    onClick={this.handleOnClick}
-                    className="next-btn"
+                    onClick={this.handleFetch}
+                    className={
+                      this.state.categoryId &&
+                      this.state.difficulty &&
+                      this.state.topic &&
+                      this.state.title
+                        ? "next-btn-active"
+                        : "next-btn"
+                    }
                     type="submit"
                     color="orange"
                     fill="false"

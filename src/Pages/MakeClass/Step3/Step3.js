@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { stateToHTML } from "draft-js-export-html";
+import MyEditorBig from "Components/MyEditorBig";
 import "./Step3.scss";
 
 export class Step3 extends Component {
+  state = {
+    editorValue: ""
+  };
+
+  handleEditor = e => {
+    this.setState({ editorValue: stateToHTML(e) });
+  };
+
   goToBefore = () => {
     this.props.history.push("/makeclass/2");
   };
@@ -21,6 +31,7 @@ export class Step3 extends Component {
     this.props.changeNextStep();
   };
   render() {
+    console.log(this.state);
     return (
       <div className="contents-wrapper3">
         <div className="progress-bar">
@@ -45,7 +56,7 @@ export class Step3 extends Component {
                   블로그 쓰듯이 이 페이지에 여러분 클래스의 매력을 맘껏
                   표현해주세요.
                 </div>
-                <div></div>
+                <MyEditorBig handleEditor={this.handleEditor} />
                 <div className="class-introduce-btn-box">
                   <button
                     className="class-introduce-pre-btn"

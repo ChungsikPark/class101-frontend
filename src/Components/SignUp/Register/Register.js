@@ -13,10 +13,10 @@ export class Register extends Component {
     isSelectionPath: true
   };
 
-  handleOnClick = event => {
+  handleFetch = event => {
     event.preventDefault();
     console.log(this.state);
-    const url = "";
+    const url = "10.58.6.107";
     const data = {
       name: this.state.name,
       email: this.state.email,
@@ -142,7 +142,7 @@ export class Register extends Component {
             </span>
           </label>
         </div>
-        <button className="signup-btn" onClick={this.handleOnClick}>
+        <button className="signup-btn" onClick={this.handleFetch}>
           <span className="signup-btn-text">가입하기</span>
         </button>
       </div>
