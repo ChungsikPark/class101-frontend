@@ -1,7 +1,7 @@
 .social-login {
   box-sizing: border-box;
 
-  .facebook-btn {
+  .google-btn {
     cursor: pointer;
     box-sizing: border-box;
     display: flex;
@@ -18,14 +18,18 @@
     border-style: solid;
     border-image: initial;
     border-color: rgb(221, 224, 226);
-    color: rgb(255, 255, 255);
-    background-color: rgb(59, 89, 152);
+    color: rgb(62, 64, 66);
+    background-color: rgb(255, 255, 255);
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.2px;
     text-decoration-line: none;
     transition: background-color 0.1s ease 0s;
     outline: none;
+
+    &:hover {
+      background-color: rgb(230, 230, 230);
+    }
 
     span {
       display: flex;

@@ -9,12 +9,34 @@ export class NormalLogin extends Component {
     password: ""
   };
 
-  handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  handleOnClick = event => {
+    event.preventDefault();
+    console.log(this.state);
+    const url = "";
+    const data = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        console.log(response);
+        if (response.SUCCESS === "200") {
+          this.props.history.push("/myclass");
+        } else {
+          console.log("error");
+        }
+      });
   };
 
-  goToNext = () => {
-    this.props.history.push("/myclass");
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
@@ -45,7 +67,7 @@ export class NormalLogin extends Component {
             회원 가입하기
           </a>
         </div>
-        <button className="login-btn" onClick={this.goToNext}>
+        <button className="login-btn" onClick={this.handleOnClick}>
           <span className="btn-text">로그인</span>
         </button>
       </div>

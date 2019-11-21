@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import facebook from "Img/facebook_logo.png";
+import google from "Img/google_logo.png";
 import kakao from "Img/kakao_logo.png";
 import "./SocialSignUp.scss";
 
@@ -22,10 +22,10 @@ export class SocialSignUp extends Component {
   render() {
     return (
       <div className="social-signup">
-        <button type="button" className="facebook-signup-btn">
-          <span className="facebook-signup-text">
-            <img src={facebook} alt="" />
-            <span>페이스북으로 로그인하기</span>
+        <button type="button" className="google-signup-btn">
+          <span className="google-signup-text">
+            <img src={google} alt="" />
+            <span>구글로 시작하기</span>
           </span>
         </button>
         <button
@@ -35,7 +35,7 @@ export class SocialSignUp extends Component {
         >
           <span className="kakao-signup-text">
             <img src={kakao} alt="" />
-            <span>카카오로 로그인하기</span>
+            <span>카카오로 시작하기</span>
           </span>
         </button>
       </div>
