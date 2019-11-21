@@ -6,7 +6,7 @@ import Step1 from "Pages/MakeClass/Step1";
 // import Step3 from "Pages/MakeClass/Step3";
 import Step4 from "Pages/MakeClass/Step4";
 import Step5 from "Pages/MakeClass/Step5";
-// import Step6 from "Pages/MakeClass/Step6";
+import Step6 from "Pages/MakeClass/Step6";
 import "./MakeClass.scss";
 
 export class MakeClass extends Component {
@@ -17,7 +17,7 @@ export class MakeClass extends Component {
           <HeaderWhite />
           <div className="main-section">
             <NewNavigation />
-            <Step5 />
+            <Step6 />
           </div>
         </div>
       </div>

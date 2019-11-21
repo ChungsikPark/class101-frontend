@@ -22,9 +22,7 @@
       margin-top: 23px;
     }
     .myclass-classes-section {
-      margin-top: 20px;
       //   border: 1px solid black;
-      display: flex;
 
       .myclass-makeclass {
         height: 280px;
@@ -33,10 +31,11 @@
         background-color: white;
         box-shadow: rgba(41, 42, 43, 0.16) 0px 1px 3px -1px,
           rgba(0, 0, 0, 0.04) 0px 0px 1px 1px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: inline-block;
+        position: absolute;
+        margin-top: 28px;
         .myclass-makeclass-content {
+          margin-top: 50px;
           text-align: center;
           color: rgb(253, 126, 20);
           margin-bottom: 20px;

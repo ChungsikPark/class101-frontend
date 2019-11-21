@@ -8,13 +8,14 @@ import photoAdd from "Img/photo-add.png";
 
 export class Step5 extends Component {
   state = {
-    reco1: "",
-    reco2: "",
-    topic1: "",
-    topic2: "",
-    topic3: "",
     selectedFile: null,
-    previewUrl: null
+    previewUrl: null,
+    creatorName: "",
+    contact: "",
+    aboutme: ""
+  };
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
   handlePreview = () => {
     this.setState({ selectedFile: null, previewUrl: null });
@@ -55,6 +56,7 @@ export class Step5 extends Component {
     this.props.history.push("/makeclass/6");
   };
   render() {
+    console.log(this.state.creatorName, this.state.contact);
     return (
       <div className="contents-wrapper5">
         <div className="makeclass-body">
@@ -70,14 +72,18 @@ export class Step5 extends Component {
               <div className="maincontents-subtitle">크리에이터 정보</div>
               <div className="maincontents-recommendtitle">프로필사진</div>
               {!this.state.previewUrl && (
-                <input
-                  type="file"
-                  accept="image/*"
-                  name="file"
-                  onChange={e => this.handleFileInput(e)}
+                <div
                   style={{ backgroundImage: `url(${photoAdd})` }}
-                  className="maincontents-pic"
-                />
+                  className="picinput-container"
+                >
+                  <input
+                    type="file"
+                    accept="image/*"
+                    name="file"
+                    onChange={e => this.handleFileInput(e)}
+                    className="maincontents-pic"
+                  />
+                </div>
               )}
               {this.state.previewUrl && (
                 <div className="img-real-container">
@@ -97,10 +103,12 @@ export class Step5 extends Component {
                     type="text"
                     className="object-input"
                     // name={this.props.name}
+                    onChange={this.handleInput}
+                    name="creatorName"
                   />
                 </div>
                 <div className="object-counter">
-                  <span>0자 / 최대 15자</span>
+                  <span>{this.state.creatorName.length}자 / 최대 15자</span>
                 </div>
               </div>
               <div className="maincontents-input-name">
@@ -110,6 +118,8 @@ export class Step5 extends Component {
                     placeholder="연락처를 적어주세요"
                     type="text"
                     className="object-input"
+                    onChange={this.handleInput}
+                    name="contact"
                     // name={this.props.name}
                   />
                 </div>

@@ -60,7 +60,7 @@
           font-weight: 600;
           margin-bottom: 10px;
         }
-        .maincontents-pic {
+        .picinput-container {
           border: none;
           width: 100px;
           height: 100px;
@@ -68,11 +68,20 @@
           background-size: cover;
 
           background-repeat: no-repeat;
+          .maincontents-pic {
+            border: none;
+            width: 100px;
+            height: 100px;
+            background-position: center;
+            background-size: cover;
+            opacity: 0;
+            background-repeat: no-repeat;
+          }
         }
         .img-real-container {
           .img-real {
-            width: 105px;
-            height: 105px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             overflow: hidden;
           }
