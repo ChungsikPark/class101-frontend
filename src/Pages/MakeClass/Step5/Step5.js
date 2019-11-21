@@ -3,8 +3,8 @@ import { withRouter } from "react-router-dom";
 import "./Step5.scss";
 import MyEditor from "Components/MyEditor";
 import axios from "axios";
-import camera from "Img/camera-btn.png";
 import photoAdd from "Img/photo-add.png";
+import { stateToHTML } from "draft-js-export-html";
 
 export class Step5 extends Component {
   state = {
@@ -12,7 +12,10 @@ export class Step5 extends Component {
     previewUrl: null,
     creatorName: "",
     contact: "",
-    aboutme: ""
+    editorValue: ""
+  };
+  handleEditor = e => {
+    this.setState({ editorValue: stateToHTML(e) });
   };
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -56,7 +59,8 @@ export class Step5 extends Component {
     this.props.history.push("/makeclass/6");
   };
   render() {
-    console.log(this.state.creatorName, this.state.contact);
+    const { creatorName, contact, editorValue } = this.state;
+    console.log(this.state);
     return (
       <div className="contents-wrapper5">
         <div className="makeclass-body">
@@ -137,26 +141,28 @@ export class Step5 extends Component {
               <div className="makeclass-aboutme">
                 <div className="aboutme-title">크리에이터 소개</div>
               </div>
-              <MyEditor />
+              <MyEditor handleEditor={this.handleEditor} />
               <div className="makeclass-buttons">
                 <button className="buttons-back">
                   <span>이전</span>
                 </button>
-                <button className="buttons-next">
+                <button
+                  className={
+                    creatorName && contact && editorValue !== ""
+                      ? "buttons-next"
+                      : "buttons-next-false"
+                  }
+                >
                   <span>다음</span>
                 </button>
               </div>
             </div>
             <div className="makeclass-subcontents">
               <div className="subcontents-ballon">
-                <div className="ballon-title">클래스 부가정보</div>
+                <div className="ballon-title">크리에이터 정보</div>
                 <div className="ballon-content">
-                  와아- 제일 큰 산을 넘기셨네요! <br />
-                  수고하셨어요 : ) <br />
-                  <br />
-                  이번엔 수강생분들과 교감하게 될 부분이에요.
-                  <br /> 어떤 분들이 들으면 좋을지 추천하고 클래스 주제 투표를
-                  받아봅시다.
+                  이제 진짜 거의 다 왔어요!
+                  <br /> '나'를 소개하는 부분이에요. 자기소개는 어렵지 않죠?
                 </div>
               </div>
             </div>

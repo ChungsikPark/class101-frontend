@@ -17,7 +17,7 @@ export class MakeClass extends Component {
           <HeaderWhite />
           <div className="main-section">
             <NewNavigation />
-            <Step6 />
+            <Step5 />
           </div>
         </div>
       </div>
@@ -26,3 +26,5 @@ export class MakeClass extends Component {
 }
 
 export default MakeClass;
+
+//"buttons-next"

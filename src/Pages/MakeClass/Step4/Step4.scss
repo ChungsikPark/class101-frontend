@@ -123,19 +123,7 @@
           font-weight: 500;
           border-radius: 3px;
         }
-        .buttons-next {
-          width: 65px;
-          height: 40px;
-          margin-left: 15px;
-          border: none;
-          background-color: #fd7e14;
-          font-size: 15px;
-          font-weight: 600;
-          color: white;
-          opacity: 0.5;
-          border-radius: 3px;
-          margin-bottom: 100px;
-        }
+
         .buttons-next {
           width: 65px;
           height: 40px;
@@ -146,6 +134,19 @@
           font-weight: 600;
           color: white;
 
+          border-radius: 3px;
+          margin-bottom: 100px;
+        }
+        .buttons-next-false {
+          width: 65px;
+          height: 40px;
+          margin-left: 15px;
+          border: none;
+          background-color: #fd7e14;
+          font-size: 15px;
+          font-weight: 600;
+          color: white;
+          opacity: 0.5;
           border-radius: 3px;
           margin-bottom: 100px;
         }

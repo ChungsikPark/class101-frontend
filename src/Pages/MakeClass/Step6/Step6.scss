@@ -60,6 +60,9 @@
           font-weight: 600;
           margin-bottom: 10px;
         }
+        .maincontents-aboutinterview {
+          font-size: 15px;
+        }
         .picinput-container {
           border: none;
           width: 100px;
@@ -171,11 +174,11 @@
           font-size: 15px;
           font-weight: 600;
           color: white;
-          opacity: 0.5;
+
           border-radius: 3px;
           margin-bottom: 100px;
         }
-        .buttons-next {
+        .buttons-next-false {
           width: 65px;
           height: 40px;
           margin-left: 15px;
@@ -184,7 +187,7 @@
           font-size: 15px;
           font-weight: 600;
           color: white;
-
+          opacity: 0.5;
           border-radius: 3px;
           margin-bottom: 100px;
         }
@@ -197,7 +200,8 @@
           padding: 20px;
           background-color: rgb(245, 245, 245);
           margin-left: 4.5%;
-          margin-top: 127px;
+          margin-top: 225px;
+          border-radius: 10px;
           .ballon-title {
             font-weight: 600;
             font-size: 16px;

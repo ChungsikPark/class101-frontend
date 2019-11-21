@@ -20,6 +20,7 @@ export class Step4 extends Component {
     this.props.history.push("/makeclass/5");
   };
   render() {
+    const { reco1, reco2, topic1, topic2, topic3 } = this.state;
     return (
       <div className="contents-wrapper4">
         <div className="makeclass-body">
@@ -127,7 +128,13 @@ export class Step4 extends Component {
                 <button className="buttons-back">
                   <span>이전</span>
                 </button>
-                <button className="buttons-next">
+                <button
+                  className={
+                    reco1 && reco2 && topic1 && topic2 && topic3 !== ""
+                      ? "buttons-next"
+                      : "buttons-next-false"
+                  }
+                >
                   <span>다음</span>
                 </button>
               </div>

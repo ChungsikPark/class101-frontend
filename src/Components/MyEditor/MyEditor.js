@@ -8,7 +8,7 @@ import {
 import Editor from "draft-js-plugins-editor";
 // import debounce from "lodash/debounce";
 import createHighlightPlugin from "Components/plugins/highlightPlugin";
-import { stateToHTML } from "draft-js-export-html";
+
 import "./MyEditor.scss";
 
 const highlightPlugin = createHighlightPlugin();
@@ -26,7 +26,7 @@ class PageContainer extends React.Component {
 
   onChange = editorState => {
     const contentState = editorState.getCurrentContent();
-    // console.log(stateToHTML(this.state.editorState.getCurrentContent()));
+    this.props.handleEditor(this.state.editorState.getCurrentContent());
     this.setState({
       editorState
     });
