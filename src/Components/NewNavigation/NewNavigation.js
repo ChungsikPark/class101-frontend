@@ -23,7 +23,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.props.currentPageNum === 1
+              this.props.currentPageControl === 1
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -35,7 +35,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.props.currentPageNum === 2
+              this.props.currentPageControl === 2
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -55,7 +55,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.props.currentPageNum === 3
+              this.props.currentPageControl === 3
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -67,7 +67,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.props.currentPageNum === 4
+              this.props.currentPageControl === 4
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -87,7 +87,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.props.currentPageNum === 5
+              this.props.currentPageControl === 5
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -99,7 +99,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.props.currentPageNum === 6
+              this.props.currentPageControl === 6
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }

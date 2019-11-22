@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import RegisterArea from "./RegisterArea";
 import "./Register.scss";
 
@@ -15,13 +16,13 @@ export class Register extends Component {
 
   handleFetch = event => {
     event.preventDefault();
-    console.log(this.state);
-    const url = "10.58.6.107";
+    const url = "http://10.58.1.225:3030/user/signup";
     const data = {
       name: this.state.name,
       email: this.state.email,
       phoneNumber: this.state.phoneNumber,
       password: this.state.password
+      // nickname: "123erdsxcvgddddfeaaagssdbddt"
     };
 
     fetch(url, {
@@ -33,7 +34,7 @@ export class Register extends Component {
         return response.json();
       })
       .then(response => {
-        if (response.SUCCESS === "200") {
+        if (response.status === "SUCCESS") {
           this.props.history.push("/");
         } else {
           console.log("error");
@@ -150,4 +151,4 @@ export class Register extends Component {
   }
 }
 
-export default Register;
+export default withRouter(Register);

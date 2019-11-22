@@ -32,19 +32,16 @@ export class Step2 extends Component {
 
   handlePost = () => {
     const formData = new FormData();
+    const url = "http://10.58.1.225:3030/creator/product";
     formData.append("coverImageUrl", this.state.coverImageUrl);
 
-    return axios
-      .patch("http://10.58.6.107:3030/creator/product", formData, {
-        headers: {
-          "Content-Type": "application/json",
-          product_id: localStorage.getItem("currentProduct"),
-          Authorization: localStorage.getItem("token")
-        }
-      })
-      .then(res => {
-        alert("성공");
-      });
+    return axios.patch(url, formData, {
+      headers: {
+        "Content-Type": "application/json",
+        product_id: localStorage.getItem("currentProduct"),
+        Authorization: localStorage.getItem("token")
+      }
+    });
   };
 
   goToBefore = () => {

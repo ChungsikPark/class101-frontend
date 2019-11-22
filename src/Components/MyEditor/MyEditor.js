@@ -25,7 +25,7 @@ class PageContainer extends React.Component {
   }
 
   onChange = editorState => {
-    const contentState = editorState.getCurrentContent();
+    // const contentState = editorState.getCurrentContent();
     this.props.handleEditor(this.state.editorState.getCurrentContent());
     this.setState({
       editorState

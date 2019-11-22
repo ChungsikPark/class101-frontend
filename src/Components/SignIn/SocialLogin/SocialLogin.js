@@ -4,9 +4,9 @@ import kakao from "Img/kakao_logo.png";
 import "./SocialLogin.scss";
 
 export class SocialLogin extends Component {
-  componentDidMount() {
-    window.Kakao.init("5f0c4b8d9015f1db24824c0dfc044962");
-  }
+  // componentDidMount() {
+  //   window.Kakao.init("5f0c4b8d9015f1db24824c0dfc044962");
+  // }
 
   loginWithKakao = () => {
     window.Kakao.Auth.login({

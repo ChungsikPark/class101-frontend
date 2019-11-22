@@ -12,7 +12,8 @@ import "./MakeClass.scss";
 
 export class MakeClass extends Component {
   state = {
-    currentPage: 5
+    currentPage: 1,
+    currentStatus: false
   };
 
   componentDidUpdate() {
@@ -79,7 +80,7 @@ export class MakeClass extends Component {
         <div className="make-class">
           <HeaderWhite />
           <div className="main-section">
-            <NewNavigation currentPageNum={this.state.currentPage} />
+            <NewNavigation currentPageControl={this.state.currentPage} />
             {currentPage}
           </div>
         </div>
