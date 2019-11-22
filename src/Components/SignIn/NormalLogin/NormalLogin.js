@@ -11,26 +11,20 @@ export class NormalLogin extends Component {
 
   handleFetch = event => {
     event.preventDefault();
-    console.log(this.state);
-    const url = "http://10.58.6.107:3030/user/login";
+    const url = "http://10.58.1.225:3030/user/login";
     const data = {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(this.state.email);
-    console.log(this.state.password);
-    console.log(data);
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     })
       .then(response => {
-        console.log(response);
         return response.json();
       })
       .then(response => {
-        console.log(response);
         if (response.token) {
           localStorage.setItem("token", response.token);
           this.props.history.push("/myclass");

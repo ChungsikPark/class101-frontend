@@ -2,12 +2,71 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { stateToHTML } from "draft-js-export-html";
 import MyEditorBig from "Components/MyEditorBig";
+import axios from "axios";
 import "./Step3.scss";
 
 export class Step3 extends Component {
   state = {
     editorValue: ""
   };
+
+  handleFetch = () => {
+    const formData = new FormData();
+    const data = {
+      description: this.state.editorValue
+    };
+    const url = "http://10.58.1.225:3030/creator/product";
+    formData.append("coverImageUrl", this.state.coverImageUrl);
+
+    return axios
+      .patch(url, formData, {
+        headers: {
+          "Content-Type": "application/json",
+          product_id: localStorage.getItem("currentProduct"),
+          Authorization: localStorage.getItem("token")
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        console.log(response);
+        if (response.status === 200) {
+          this.props.history.push("/makeclass/4");
+          this.props.changeNextStep();
+        } else {
+          console.log("error");
+        }
+      });
+  };
+
+  // handleFetch = event => {
+  //   console.log(this.state);
+  //   const url = "http://10.58.1.225:3030/creator/product";
+  //   const data = {
+  //     description: this.state.editorValue
+  //   };
+
+  //   fetch(url, {
+  //     method: "patch",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token")
+  //     },
+  //     body: JSON.stringify(data)
+  //   })
+  //     .then(response => {
+  //       return response.json();
+  //     })
+  //     .then(response => {
+  //       console.log(response);
+  //       if (response.product) {
+  //         localStorage.setItem("currentProduct", response.product._id);
+  //         this.props.history.push("/makeclass/4");
+  //         this.props.changeNextStep();
+  //       } else {
+  //         console.log("error");
+  //       }
+  //     });
+  // };
 
   handleEditor = e => {
     this.setState({ editorValue: stateToHTML(e) });
@@ -17,19 +76,11 @@ export class Step3 extends Component {
     this.props.history.push("/makeclass/2");
   };
 
-  goToAfter = () => {
-    this.props.history.push("/makeclass/4");
-  };
-
   handlePreClick = () => {
     this.goToBefore();
     this.props.changePreStep();
   };
 
-  handleNextClick = () => {
-    this.goToAfter();
-    this.props.changeNextStep();
-  };
   render() {
     console.log(this.state);
     return (
@@ -68,7 +119,7 @@ export class Step3 extends Component {
                   <button
                     className="class-introduce-next-btn"
                     type="submit"
-                    onClick={this.handleNextClick}
+                    onClick={this.handleFetch}
                   >
                     <span className="class-introduce-next-btn-text">다음</span>
                   </button>
