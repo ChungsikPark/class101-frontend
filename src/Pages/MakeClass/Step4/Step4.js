@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import axios from "axios";
 import SVG from "Img/SVG";
 import info1 from "Img/makeclass-info1.png";
 import InputArea from "Components/InputArea";
@@ -16,9 +17,36 @@ export class Step4 extends Component {
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   goToNext = () => {
-    this.props.history.push("/makeclass/5");
+    axios
+      .patch(
+        "http://10.58.1.225:3030/creator/product",
+        {
+          // body: JSON.stringify({
+          recommendations: [this.state.reco1, this.state.reco2]
+        },
+        {
+          // }),
+          headers: {
+            // "Access-Control-Allow-Origin": "*",
+            // "Content-Type": "application/json",
+            product_id: "5dd58c8c09612123d2583c2b",
+            Authorization:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMDFAYS5jb20iLCJpYXQiOjE1NzQzOTgyNjZ9.1pNqDo_bYSepkclzKe93h_Pp9XUUtkRY8Ty9YM3H088"
+          }
+        }
+      )
+      // .then(function(res) {
+      //   console.log(res.json());
+      //   return res.json();
+      // })
+      .then(res => {
+        console.log(res.data);
+        this.props.history.push("/makeclass/5");
+      });
   };
+
   render() {
     const { reco1, reco2, topic1, topic2, topic3 } = this.state;
     return (
@@ -89,7 +117,7 @@ export class Step4 extends Component {
                   3~6개 정도의 주제를 활용하여 수요를 확인해봅니다. 그래서
                   기대감을 줄 수 있도록 구체적인 주제들이 좋습니다.
                   <br />
-                  <img className="helpbox-info1" src={info1} />
+                  <img alt="" className="helpbox-info1" src={info1} />
                 </div>
               </div>
               <InputArea
@@ -134,6 +162,7 @@ export class Step4 extends Component {
                       ? "buttons-next"
                       : "buttons-next-false"
                   }
+                  onClick={this.goToNext}
                 >
                   <span>다음</span>
                 </button>

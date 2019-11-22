@@ -9,10 +9,14 @@ export class Step6 extends Component {
     TextName1: "",
     SelectName2: "",
     TextName2: "",
+    SelectName3: "",
+    TextName3: "",
     selectedFile1: null,
     previewUrl1: null,
     selectedFile2: null,
-    previewUrl2: null
+    previewUrl2: null,
+    selectedFile3: null,
+    previewUrl3: null
   };
 
   handleFileInput = e => {
@@ -25,7 +29,6 @@ export class Step6 extends Component {
         selectedFile1: selectedFile,
         previewUrl1: previewFile.result
       });
-      console.log("sad");
     };
 
     previewFile.readAsDataURL(selectedFile);
@@ -41,7 +44,21 @@ export class Step6 extends Component {
         selectedFile2: selectedFile,
         previewUrl2: previewFile.result
       });
-      console.log("sad");
+    };
+
+    previewFile.readAsDataURL(selectedFile);
+  };
+
+  handleFileInput3 = e => {
+    e.preventDefault();
+    let previewFile = new FileReader();
+    let selectedFile = e.target.files[0];
+
+    previewFile.onloadend = () => {
+      this.setState({
+        selectedFile3: selectedFile,
+        previewUrl3: previewFile.result
+      });
     };
 
     previewFile.readAsDataURL(selectedFile);
@@ -52,7 +69,25 @@ export class Step6 extends Component {
   };
 
   goToNext = () => {
-    this.props.history.push("/myclass");
+    fetch("http://10.58.0.33:8000/account/signup", {
+      method: "post",
+      body: JSON.stringify({
+        SelectName1: this.state.SelectName1,
+        TextName1: this.state.TextName1,
+        SelectName2: this.state.SelectName2,
+        TextName2: this.state.TextName2,
+        selectedFile1: this.state.selectedFile1,
+        previewUrl1: this.state.previewUrl1,
+        selectedFile2: this.state.selectedFile2,
+        previewUrl2: this.state.previewUrl2
+      })
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => {
+        this.props.history.push("/myclass");
+      });
   };
   render() {
     const { SelectName1, TextName1, SelectName2, TextName2 } = this.state;
@@ -99,6 +134,17 @@ export class Step6 extends Component {
                 handleFileInput={this.handleFileInput2}
                 previewUrl={this.state.previewUrl2}
                 TextValue={this.state.TextName2}
+              />
+              <Interview
+                name="selectedFile3"
+                id="previewUrl3"
+                askIndex="03"
+                SelectName="SelectName3"
+                TextName="TextName3"
+                handleChange={this.handleChange}
+                handleFileInput={this.handleFileInput3}
+                previewUrl={this.state.previewUrl3}
+                TextValue={this.state.TextName3}
               />
 
               <div className="makeclass-buttons">

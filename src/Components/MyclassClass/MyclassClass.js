@@ -14,11 +14,11 @@ export class MyclassClass extends Component {
     return (
       <div className="myclass-class">
         <div
-          style={{ backgroundImage: `url(${info.classimg})` }}
+          style={{ backgroundImage: `url(${info.coverImageUrl})` }}
           className="myclass-img"
         />
         <div className="myclass-contents">
-          <div className="myclass-title">{info.classname}</div>
+          <div className="myclass-title">{info.title}</div>
           <img src={utill} className="myclass-utill" alt="" />
         </div>
         <div className="myclass-status">클래스 진행중</div>

@@ -17,7 +17,7 @@ export class MakeClass extends Component {
           <HeaderWhite />
           <div className="main-section">
             <NewNavigation />
-            <Step5 />
+            <Step4 />
           </div>
         </div>
       </div>

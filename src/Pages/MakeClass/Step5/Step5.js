@@ -52,6 +52,25 @@ export class Step5 extends Component {
       });
   };
 
+  goToNext = () => {
+    fetch("http://10.58.0.33:8000/account/signup", {
+      method: "post",
+      body: JSON.stringify({
+        selectedFile: this.state.selectedFile,
+        previewUrl: this.state.previewUrl,
+        creatorName: this.state.creatorName,
+        contact: this.state.contact,
+        editorValue: this.state.editorValue
+      })
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => {
+        this.props.history.push("/makeclass/6");
+      });
+  };
+
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -152,6 +171,7 @@ export class Step5 extends Component {
                       ? "buttons-next"
                       : "buttons-next-false"
                   }
+                  onClick={this.goToNext}
                 >
                   <span>다음</span>
                 </button>
