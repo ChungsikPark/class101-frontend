@@ -15,13 +15,12 @@ export class Step1 extends Component {
     title: ""
   };
   componentDidMount() {
-    fetch("http://10.58.6.107:3030/creator/product/category", {
+    fetch("http://10.58.1.225:3030/creator/product/category", {
       method: "GET",
       headers: { authorization: localStorage.getItem("token") }
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           category: response.category
         });
@@ -29,8 +28,7 @@ export class Step1 extends Component {
   }
 
   handleFetch = event => {
-    console.log(this.state);
-    const url = "http://10.58.6.107:3030/creator/product";
+    const url = "http://10.58.1.225:3030/creator/product";
     const data = {
       categoryId: this.state.categoryId,
       difficulty: this.state.difficulty,
@@ -50,7 +48,6 @@ export class Step1 extends Component {
         return response.json();
       })
       .then(response => {
-        console.log(response);
         if (response.product) {
           localStorage.setItem("currentProduct", response.product._id);
           this.props.history.push("/makeclass/2");
@@ -87,15 +84,6 @@ export class Step1 extends Component {
     this.handleInput(e);
     this.handleTitleInputError(e);
   };
-
-  // goToAfter = () => {
-  //   this.props.history.push("/makeclass/2");
-  // };
-
-  // handleOnClick = () => {
-  //   this.handleFetch();
-  //   this.props.changeNextStep();
-  // };
 
   handleSelect = e => {
     console.log(e.target.value);
@@ -141,26 +129,26 @@ export class Step1 extends Component {
                       </option>
                       <option value={this.state.category[0]._id}>미술</option>
                       <option value={this.state.category[1]._id}>
-                        디자인, 개발
-                      </option>
-                      <option value={this.state.category[2]._id}>
                         디지털 드로잉
                       </option>
+                      <option value={this.state.category[2]._id}>공예</option>
                       <option value={this.state.category[3]._id}>
                         라이프 스타일
                       </option>
-                      <option value={this.state.category[4]._id}>공예</option>
-                      <option value={this.state.category[5]._id}>
-                        사진, 영상
-                      </option>
-                      <option value={this.state.category[6]._id}>
-                        시그니처
-                      </option>
-                      <option value={this.state.category[7]._id}>
+                      <option value={this.state.category[4]._id}>
                         요리, 음료
                       </option>
-                      <option value={this.state.category[8]._id}>음악</option>
-                      <option value={this.state.category[9]._id}>커리어</option>
+                      <option value={this.state.category[5]._id}>
+                        디자인, 개발
+                      </option>
+                      <option value={this.state.category[6]._id}>음악</option>
+                      <option value={this.state.category[7]._id}>커리어</option>
+                      <option value={this.state.category[8]._id}>
+                        사진, 영상
+                      </option>
+                      <option value={this.state.category[9]._id}>
+                        시그니처
+                      </option>
                     </select>
                   )}
                 </div>
