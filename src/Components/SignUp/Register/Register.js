@@ -21,8 +21,8 @@ export class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       phoneNumber: this.state.phoneNumber,
-      password: this.state.password
-      // nickname: "123erdsxcvgddddfeaaagssdbddt"
+      password: this.state.password,
+      nickname: "123f2ghjpo7yhn"
     };
 
     fetch(url, {

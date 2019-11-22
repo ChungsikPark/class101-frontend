@@ -53,23 +53,23 @@ export class Step5 extends Component {
   };
 
   goToNext = () => {
-    fetch("http://10.58.0.33:8000/account/signup", {
-      method: "post",
-      body: JSON.stringify({
-        selectedFile: this.state.selectedFile,
-        previewUrl: this.state.previewUrl,
-        creatorName: this.state.creatorName,
-        contact: this.state.contact,
-        editorValue: this.state.editorValue
-      })
-    })
-      .then(function(res) {
-        return res.json();
-      })
-      .then(res => {
-        this.goToAfter();
-        this.props.changeNextStep();
-      });
+    // fetch("http://10.58.0.33:8000/account/signup", {
+    //   method: "post",
+    //   body: JSON.stringify({
+    //     selectedFile: this.state.selectedFile,
+    //     previewUrl: this.state.previewUrl,
+    //     creatorName: this.state.creatorName,
+    //     contact: this.state.contact,
+    //     editorValue: this.state.editorValue
+    //   })
+    // })
+    //   .then(function(res) {
+    //     return res.json();
+    //   })
+    //   .then(res => {
+    this.goToAfter();
+    this.props.changeNextStep();
+    // });
   };
 
   handleInput = e => {
@@ -172,7 +172,7 @@ export class Step5 extends Component {
                       ? "buttons-next"
                       : "buttons-next-false"
                   }
-                  onClick={this.goToNext}
+                  onClick={this.props.changeNextStep}
                 >
                   <span>다음</span>
                 </button>

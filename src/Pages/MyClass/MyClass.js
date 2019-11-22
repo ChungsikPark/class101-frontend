@@ -23,14 +23,14 @@ export class MyClass extends Component {
       method: "get",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMDFAYS5jb20iLCJpYXQiOjE1NzQzOTgyNjZ9.1pNqDo_bYSepkclzKe93h_Pp9XUUtkRY8Ty9YM3H088"
+        Authorization: localStorage.getItem("token")
       }
     })
       .then(function(res) {
         return res.json();
       })
       .then(res => {
+        console.log(res.products);
         let classData = res.products;
         this.setState({ myclassData: classData });
       });
