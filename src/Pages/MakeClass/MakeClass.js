@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HeaderWhite from "Components/HeaderWhite";
 import NewNavigation from "Components/NewNavigation";
 import Step1 from "Pages/MakeClass/Step1";
+
 import Step2 from "Pages/MakeClass/Step2";
 import Step3 from "Pages/MakeClass/Step3";
 import Step4 from "Pages/MakeClass/Step4";
@@ -11,7 +12,7 @@ import "./MakeClass.scss";
 
 export class MakeClass extends Component {
   state = {
-    currentPage: 1
+    currentPage: 4
   };
 
   componentDidUpdate() {
@@ -88,3 +89,5 @@ export class MakeClass extends Component {
 }
 
 export default MakeClass;
+
+//"buttons-next"

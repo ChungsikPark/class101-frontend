@@ -1,21 +1,34 @@
 .contents-wrapper1 {
   width: 100%;
 
-  .progress-bar {
-    position: fixed;
-    flex-grow: 1;
-    top: 75px;
-    background-color: rgb(221, 224, 226);
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    z-index: 30;
+  .makeclass-topbar {
+    display: flex;
+    height: 5px;
 
-    .progress-bar-status {
+    width: 100%;
+
+    .makeclass-topbarno {
+      width: 100%;
+      height: 5px;
+      background-color: rgb(194, 194, 194);
+      position: fixed;
+      z-index: 10;
+    }
+    .makeclass-topbaryes {
+      width: 20%;
+      height: 5px;
+      position: fixed;
       background-color: rgb(253, 126, 20);
-      width: 16.6667%;
-      height: 4px;
-      border-radius: 0px;
+      animation: handleTopbar1 2s;
+      z-index: 11;
+    }
+    @keyframes handleTopbar1 {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 20%;
+      }
     }
   }
   .make-class-contents {

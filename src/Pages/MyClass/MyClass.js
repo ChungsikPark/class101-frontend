@@ -11,12 +11,30 @@ export class MyClass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Mock: MyClassMock
+      Mock: MyClassMock,
+      myclassData: []
     };
   }
   goToIntro() {
     this.props.history.push("/intro/intro1");
   }
+  componentDidMount = () => {
+    fetch("http://10.58.1.225:3030/creator/product", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMDFAYS5jb20iLCJpYXQiOjE1NzQzOTgyNjZ9.1pNqDo_bYSepkclzKe93h_Pp9XUUtkRY8Ty9YM3H088"
+      }
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => {
+        let classData = res.products;
+        this.setState({ myclassData: classData });
+      });
+  };
   render() {
     return (
       <div className="myclass-container">
@@ -25,7 +43,7 @@ export class MyClass extends Component {
         <div className="myclass-body">
           <div className="myclass-header">내 온라인 클래스들</div>
           <div className="myclass-classes-section">
-            {this.state.Mock.map((el, idx) => {
+            {this.state.myclassData.map((el, idx) => {
               return <MyclassClass info={el} index={idx} />;
             })}
 

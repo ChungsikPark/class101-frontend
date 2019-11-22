@@ -1,5 +1,7 @@
 .myclass-class {
+  display: inline-block;
   height: 280px;
+  margin-top: 28px;
   width: 30%;
   max-width: 340px;
   margin-right: 1.7%;
@@ -7,6 +9,7 @@
   box-shadow: rgba(41, 42, 43, 0.16) 0px 1px 3px -1px,
     rgba(0, 0, 0, 0.04) 0px 0px 1px 1px;
   .myclass-img {
+    background-color: rgb(219, 219, 219);
     height: 70%;
     background-position: center;
     background-size: cover;
