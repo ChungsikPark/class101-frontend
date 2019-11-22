@@ -53,34 +53,50 @@ export class Step5 extends Component {
   };
 
   goToNext = () => {
-    fetch("http://10.58.0.33:8000/account/signup", {
-      method: "post",
-      body: JSON.stringify({
-        selectedFile: this.state.selectedFile,
-        previewUrl: this.state.previewUrl,
-        creatorName: this.state.creatorName,
-        contact: this.state.contact,
-        editorValue: this.state.editorValue
-      })
-    })
-      .then(function(res) {
-        return res.json();
-      })
+    console.log("gotonext");
+    axios
+      .post(
+        "http://10.58.1.225:3030/creator/profile",
+        {
+          // body: JSON.stringify({
+          profileImageUrl: this.state.selectedFile,
+          nickname: this.state.creatorName,
+          phone: this.state.contact,
+          introduction: this.state.editorValue
+        },
+        {
+          // }),
+          headers: {
+            // "Access-Control-Allow-Origin": "*",
+            // "Content-Type": "application/json",
+            product_id: "5dd58c8c09612123d2583c2b",
+            Authorization:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMDFAYS5jb20iLCJpYXQiOjE1NzQzOTgyNjZ9.1pNqDo_bYSepkclzKe93h_Pp9XUUtkRY8Ty9YM3H088"
+          }
+        }
+      )
+      // .then(function(res) {
+      //   console.log(res.json());
+      //   return res.json();
+      // })
       .then(res => {
-        this.goToAfter();
-        this.props.changeNextStep();
+        console.log(res);
+        if (res.status === 200) {
+          // this.goToAfter();
+          this.props.changeNextStep();
+        } else {
+          alert("ㄴㄴ");
+        }
       });
   };
 
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  goToNext = () => {
-    this.props.history.push("/makeclass/6");
-  };
+
   render() {
     const { creatorName, contact, editorValue } = this.state;
-    console.log(this.state);
+
     return (
       <div className="contents-wrapper5">
         <div className="makeclass-body">

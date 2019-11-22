@@ -49,7 +49,7 @@ export class Step4 extends Component {
       //   return res.json();
       // })
       .then(res => {
-        console.log(res.data);
+        console.log(res);
         this.goToAfter();
         this.props.changeNextStep();
       });

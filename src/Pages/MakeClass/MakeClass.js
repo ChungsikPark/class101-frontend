@@ -12,7 +12,7 @@ import "./MakeClass.scss";
 
 export class MakeClass extends Component {
   state = {
-    currentPage: 4
+    currentPage: 5
   };
 
   componentDidUpdate() {
