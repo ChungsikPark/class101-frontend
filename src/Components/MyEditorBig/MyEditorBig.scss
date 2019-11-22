@@ -1,0 +1,52 @@
+.editorContainer2 {
+  width: 100%;
+  display: block;
+  height: 585px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border: 1px rgb(179, 179, 179) solid;
+  .buttonContainer {
+    display: flex;
+  }
+
+  .editors {
+    border-top: 1px rgb(179, 179, 179) solid;
+    padding: 1.5em 2em 2.75em 2em;
+    width: 100%;
+    letter-spacing: 1.5px;
+    font-size: 95%;
+
+    text-align: left;
+    line-height: 1.5em;
+    height: 92%;
+  }
+  button {
+    width: 50px;
+
+    line-height: 200%;
+    border: none;
+    height: 50px;
+    span,
+    b,
+    em {
+      font-size: 17px;
+    }
+  }
+
+  button.underline {
+    text-decoration: underline;
+  }
+
+  .underline,
+  .bold,
+  .italic,
+  .highlight {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+    font-size: 1em;
+  }
+}

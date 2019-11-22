@@ -4,17 +4,11 @@ import "./NewNavigation.scss";
 
 export class NewNavigation extends Component {
   state = {
-    isFirstOneSelected: false,
-    isFirstTwoSelected: true,
-    isSecondOneSelected: false,
-    isSecondTwoSelected: false,
-    isThirdOneSelected: false,
-    isThirdTwoSelected: false,
-    isFirstOneDone: true,
+    isFirstOneDone: false,
     isFirstTwoDone: false,
     isSecondOneDone: false,
     isSecondTwoDone: false,
-    isThirdOneDone: true,
+    isThirdOneDone: false,
     isThirdTwoDone: false
   };
   render() {
@@ -29,7 +23,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.state.isFirstOneSelected
+              this.props.currentPageNum === 1
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -41,7 +35,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.state.isFirstTwoSelected
+              this.props.currentPageNum === 2
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -61,7 +55,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.state.isSecondOneSelected
+              this.props.currentPageNum === 3
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -73,7 +67,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.state.isSecondTwoSelected
+              this.props.currentPageNum === 4
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -93,7 +87,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.state.isThirdOneSelected
+              this.props.currentPageNum === 5
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }
@@ -105,7 +99,7 @@ export class NewNavigation extends Component {
           </div>
           <div
             className={
-              this.state.isThirdTwoSelected
+              this.props.currentPageNum === 6
                 ? "navigation-text-wrap-done"
                 : "navigation-text-wrap"
             }

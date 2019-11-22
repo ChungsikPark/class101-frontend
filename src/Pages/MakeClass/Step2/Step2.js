@@ -7,12 +7,12 @@ import "./Step2.scss";
 
 export class Step2 extends Component {
   state = {
-    selectedFile: null,
+    coverImageUrl: null,
     previewUrl: null
   };
 
   handlePreview = () => {
-    this.setState({ selectedFile: null, previewUrl: null });
+    this.setState({ coverImageUrl: null, previewUrl: null });
   };
 
   handleFileInput = e => {
@@ -22,7 +22,7 @@ export class Step2 extends Component {
 
     previewFile.onloadend = () => {
       this.setState({
-        selectedFile: selectedFile,
+        coverImageUrl: selectedFile,
         previewUrl: previewFile.result
       });
     };
@@ -32,14 +32,19 @@ export class Step2 extends Component {
 
   handlePost = () => {
     const formData = new FormData();
-    formData.append("file", this.state.selectedFile);
+    formData.append("coverImageUrl", this.state.coverImageUrl);
 
-    return axios.post("", formData).then(res => {
-      alert("성공");
-    });
-    // .catch(err => {
-    //   alert("실패");
-    // });
+    return axios
+      .patch("http://10.58.6.107:3030/creator/product", formData, {
+        headers: {
+          "Content-Type": "application/json",
+          product_id: localStorage.getItem("currentProduct"),
+          Authorization: localStorage.getItem("token")
+        }
+      })
+      .then(res => {
+        alert("성공");
+      });
   };
 
   goToBefore = () => {
@@ -147,7 +152,11 @@ export class Step2 extends Component {
                     <span className="cover-image-pre-btn-text">이전</span>
                   </button>
                   <button
-                    className="cover-image-next-btn"
+                    className={
+                      this.state.previewUrl
+                        ? "cover-image-next-btn-active"
+                        : "cover-image-next-btn"
+                    }
                     type="submit"
                     onClick={this.handleNextClick}
                   >
