@@ -86,7 +86,8 @@ export class Step6 extends Component {
         return res.json();
       })
       .then(res => {
-        this.props.history.push("/myclass");
+        this.goToAfter();
+        this.props.changeNextStep();
       });
   };
   render() {

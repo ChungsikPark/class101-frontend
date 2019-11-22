@@ -17,7 +17,14 @@ export class Step4 extends Component {
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  goToAfter = () => {
+    this.props.history.push("/makeclass/3");
+  };
+  handleNextClick = () => {
+    this.goToAfter();
 
+    this.props.changeNextStep();
+  };
   goToNext = () => {
     axios
       .patch(
@@ -43,7 +50,8 @@ export class Step4 extends Component {
       // })
       .then(res => {
         console.log(res.data);
-        this.props.history.push("/makeclass/5");
+        this.goToAfter();
+        this.props.changeNextStep();
       });
   };
 

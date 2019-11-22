@@ -17,13 +17,21 @@
       margin-bottom: 10px;
       padding-right: 12px;
 
-      .navigation-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-        padding-right: 12px;
+      .navigation-title-text {
+        font-size: 14px;
+        font-weight: normal;
+        color: rgb(62, 64, 66);
+        line-height: 20px;
+        letter-spacing: -0.2px;
+        margin: 0px;
       }
+    }
+
+    .navigation-text {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      margin: 0px;
     }
 
     .navigation-text-wrap {
@@ -31,16 +39,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: inherit;
       padding: 10px 12px 10px 24px;
 
       .navigation-text {
-        font-size: 14px;
         font-weight: normal;
         color: rgb(168, 174, 179);
-        line-height: 20px;
-        letter-spacing: -0.2px;
-        margin: 0px;
       }
     }
 
@@ -49,17 +52,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      text-decoration: none;
-      background-color: rgb(255, 255, 255);
       padding: 10px 12px 10px 24px;
+      background-color: rgb(255, 255, 255);
 
-      .navigation-text-done {
-        font-size: 14px;
+      .navigation-text {
         font-weight: bold;
         color: rgb(62, 64, 66);
-        line-height: 20px;
-        letter-spacing: -0.2px;
-        margin: 0px;
       }
     }
   }
