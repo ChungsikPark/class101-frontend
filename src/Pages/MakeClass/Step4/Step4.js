@@ -38,9 +38,8 @@ export class Step4 extends Component {
           headers: {
             // "Access-Control-Allow-Origin": "*",
             // "Content-Type": "application/json",
-            product_id: "5dd58c8c09612123d2583c2b",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMDFAYS5jb20iLCJpYXQiOjE1NzQzOTgyNjZ9.1pNqDo_bYSepkclzKe93h_Pp9XUUtkRY8Ty9YM3H088"
+            product_id: localStorage.getItem("currentProduct"),
+            Authorization: localStorage.getItem("token")
           }
         }
       )

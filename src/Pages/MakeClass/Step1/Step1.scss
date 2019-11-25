@@ -1,20 +1,13 @@
 .contents-wrapper1 {
   width: 100%;
 
-  .makeclass-topbar {
-    display: flex;
-    height: 5px;
-
+  .progress-bar {
     width: 100%;
-
-    .makeclass-topbarno {
-      width: 100%;
-      height: 5px;
-      background-color: rgb(194, 194, 194);
-      position: fixed;
-      z-index: 10;
-    }
-    .makeclass-topbaryes {
+    height: 5px;
+    background-color: rgb(194, 194, 194);
+    position: fixed;
+    z-index: 10;
+    .progress-bar-status {
       width: 20%;
       height: 5px;
       position: fixed;
@@ -22,6 +15,7 @@
       animation: handleTopbar1 2s;
       z-index: 11;
     }
+
     @keyframes handleTopbar1 {
       0% {
         width: 0%;

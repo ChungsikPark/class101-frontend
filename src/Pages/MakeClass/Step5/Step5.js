@@ -38,28 +38,30 @@ export class Step5 extends Component {
 
     previewFile.readAsDataURL(selectedFile);
   };
-  handlePost = () => {
-    const formData = new FormData();
-    formData.append("file", this.state.selectedFile);
+  // handlePost = () => {
+  //   const formData = new FormData();
+  //   formData.append("file", this.state.selectedFile);
 
-    return axios
-      .post("http://localhost3000", formData)
-      .then(res => {
-        alert("성공");
-      })
-      .catch(err => {
-        alert("실패");
-      });
-  };
+  //   return axios
+  //     .post("http://localhost3000", formData)
+  //     .then(res => {
+  //       alert("성공");
+  //     })
+  //     .catch(err => {
+  //       alert("실패");
+  //     });
+  // };
 
   goToNext = () => {
     console.log("gotonext");
+    const formData = new FormData();
+    formData.append("file", this.state.selectedFile);
     axios
       .post(
         "http://10.58.1.225:3030/creator/profile",
+        formData,
         {
           // body: JSON.stringify({
-          profileImageUrl: this.state.selectedFile,
           nickname: this.state.creatorName,
           phone: this.state.contact,
           introduction: this.state.editorValue
@@ -69,9 +71,8 @@ export class Step5 extends Component {
           headers: {
             // "Access-Control-Allow-Origin": "*",
             // "Content-Type": "application/json",
-            product_id: "5dd58c8c09612123d2583c2b",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIxMDFAYS5jb20iLCJpYXQiOjE1NzQzOTgyNjZ9.1pNqDo_bYSepkclzKe93h_Pp9XUUtkRY8Ty9YM3H088"
+            product_id: localStorage.getItem("currentProduct"),
+            Authorization: localStorage.getItem("token")
           }
         }
       )
